@@ -1,0 +1,8 @@
+configuration {
+    modes: [ combi ];
+    combi-modes: [ window, drun, run ];
+    icon-theme: "Papirus";
+    drun-icon-theme: "Papirus";
+}
+
+@theme "spotlight-dark"

@@ -1,0 +1,38 @@
+snippet aoc
+    use std::fs;
+    use std::time::Instant;
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        #[test]
+        fn first_case() {
+            let first_input: &str = "";
+            assert_eq!(first_input, "");
+        }
+
+    }
+
+    fn part_a(input: &String) -> i32 {
+        $0
+    }
+
+    fn part_b(input: &String) -> i32 {
+		$0
+    }
+
+    fn main() {
+        let now = Instant::now();
+        let input = fs::read_to_string("input.txt").expect("Error reading input file.");
+        let result_a = part_a(&input);
+        let result_b = part_b(&input);
+
+        println!(
+            "Result of Part A: {result_a}\n\
+            Result of Part B: {result_b}\n\
+            Running Time: {} ms", now.elapsed().as_millis()
+        );
+    }
+
+

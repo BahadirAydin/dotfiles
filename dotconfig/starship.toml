@@ -1,0 +1,184 @@
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$hg_branch\
+$git_status\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$dart\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$java\
+$lua\
+$ocaml\
+$perl\
+$python\
+$rust\
+$scala\
+$zig\
+$conda\
+$meson\
+$memory_usage\
+$aws\
+$gcloud\
+$azure\
+$env_var\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+
+[character]
+success_symbol = '[❯](#26c196)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = "[N](#b9c2f1)"
+vimcmd_replace_one_symbol = "[r](#e4e638)"
+vimcmd_replace_symbol = "[R](#e69138)"
+vimcmd_visual_symbol = "[V](#c27ba0)"
+
+[cmd_duration]
+# min_time = 2_000
+min_time = 2_000
+format = '󰣇 [$duration](bold yellow)'
+# show_notifications = true
+# min_time_to_notify = 10_000
+
+[aws]
+symbol = "  "
+
+[battery]
+format = '[$symbol$percentage]($style) '
+full_symbol = '󰁹 '
+charging_symbol = '󰂄 '
+discharging_symbol = '󰂃 '
+empty_symbol = '󰂎 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '   '
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+style = '#f0b6fb'
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+style = "#ADBDFF"
+
+[git_status]
+# style = "#D24F37"
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Amazon = " "
+Android = " "
+Arch = " "
+Fedora = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Redhat = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+symbol = " "
+format = '[$symbol$version]($style) '
+version_format = 'v${major}.${minor}'
+style = '#b27c7c'
+
+[python]
+symbol = "🐍 "
+version_format = 'v${major}.${minor}'
+
+
+[rust]
+symbol = "🦀 "
+version_format = 'v${major}.${minor}'
+style = "#FF9B50"
+

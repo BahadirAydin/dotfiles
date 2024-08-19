@@ -1,0 +1,16 @@
+*.log
+*.ldb
+*.bak
+**/syncthing/
+**/obsidian/
+**/Qt*/
+**/github-copilot/
+**/dconf/
+**/gtk-3.0/
+**/rclone/
+**/qimgv/
+**/qrcp/
+**/ibus/
+**/qBittorrent/
+QtProject.conf
+**/watch_later/

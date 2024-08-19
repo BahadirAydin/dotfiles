@@ -1,0 +1,16 @@
+[manager]
+ratio = [0, 4 , 3]
+
+[opener]
+video = [
+	{ run = 'celluloid "$@"'},
+]
+open = [
+    { run = 'xdg-open "$@"'}
+]
+
+[open]
+rules = [
+	{ mime = "video/*", use = "video" },
+    { mime = "image/*", use = "open"}
+]
