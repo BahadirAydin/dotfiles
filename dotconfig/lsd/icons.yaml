@@ -1,0 +1,26 @@
+name:
+  .trash: 
+  .cargo: 
+  .emacs.d: 
+  a.out: 
+  music: 󰋌
+  downloads: 󱑤
+extension:
+  go: 
+  rs: 󱘗
+  py: 󱔎
+  pdf: 
+  epub: 
+  mobi: 
+  md: 
+filetype:
+  dir: 
+  file: 📄
+  pipe: 📩
+  socket: 󰆨
+  executable: 
+  symlink-dir: 
+  symlink-file: 
+  device-char: 
+  device-block: 󰜫
+  special: 
