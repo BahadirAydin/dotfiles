@@ -12,6 +12,7 @@ dhcp
 eog
 entr
 feh
+ffmpegthumbnailer
 firefox
 fish
 gimp
@@ -31,7 +32,6 @@ jq
 kitty
 lazygit
 libinput-gestures
-libreoffice-still
 libqalculate
 localsend
 man-db
