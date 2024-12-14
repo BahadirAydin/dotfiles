@@ -69,6 +69,8 @@ tealdeer
 thunderbird
 tokei
 trash-cli
+unrar
+unzip
 waybar
 wayland
 wayland-procotols
