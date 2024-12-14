@@ -29,6 +29,7 @@ fish_vi_key_bindings
 pyenv init - | source
 
 starship init fish | source
+source "$HOME/.cargo/env.fish"
 
 ###########
 #  PATH   #
