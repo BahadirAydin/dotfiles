@@ -54,6 +54,7 @@ pipewire
 pipewire-pulse
 prettierd
 procs
+pyright
 python-black
 qbittorrent
 qt5-wayland
