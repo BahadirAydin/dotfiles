@@ -6,6 +6,7 @@ btop
 calibre
 celluloid
 copyq
+csvlens
 dunst
 dust
 dhcp
