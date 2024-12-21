@@ -41,13 +41,13 @@ return {
 	{
 		"sindrets/diffview.nvim",
 		opts = {},
-        keys = {
-            {
-                "<leader>dd",
-                "<cmd>DiffviewOpen<CR>",
-                { silent = true },
-            }
-        }
+		keys = {
+			{
+				"<leader>dd",
+				"<cmd>DiffviewOpen<CR>",
+				{ silent = true },
+			},
+		},
 	},
 	{
 		"akinsho/git-conflict.nvim",
@@ -68,12 +68,12 @@ return {
 			dir = "~/BahadirAydin/Notes",
 			daily_notes = {
 				folder = "Günlük",
-				date_format = "%d-%m-%Y",
+				date_format = "%Y-%d-%m",
 			},
 
 			completion = {
 				nvim_cmp = true,
-				min_chars = 2,
+				min_chars = 1,
 			},
 			note_id_func = function(title)
 				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
@@ -101,17 +101,13 @@ return {
 			-- },
 
 			follow_url_func = function(url)
-				-- Open the URL in the default web browser.
-				vim.fn.jobstart({ "open", url }) -- Mac OS
-				-- vim.fn.jobstart({"xdg-open", url})  -- linux
+				vim.fn.jobstart({ "open", url })
 			end,
-
-			-- https://github.com/Vinzent03/obsidian-advanced-uri
 			use_advanced_uri = true,
-
 			finder = "telescope.nvim",
 		},
 		config = function(_, opts)
+			vim.opt.conceallevel = 1
 			require("obsidian").setup(opts)
 			vim.keymap.set("n", "gf", function()
 				if require("obsidian").util.cursor_on_markdown_link() then
