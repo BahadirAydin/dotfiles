@@ -55,7 +55,8 @@ return {
 		config = true,
 	},
 	{
-		"epwalsh/obsidian.nvim",
+		"obsidian-nvim/obsidian.nvim",
+		version= "*",
 		lazy = true,
 		event = { "BufReadPre /home/bahadir/BahadirAydin/Notes/**.md" },
 		ft = "markdown",
@@ -73,7 +74,8 @@ return {
 
 			completion = {
 				nvim_cmp = true,
-				min_chars = 1,
+                blink = false,
+				min_chars = 2,
 			},
 			note_id_func = function(title)
 				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
@@ -107,7 +109,7 @@ return {
 			finder = "telescope.nvim",
 		},
 		config = function(_, opts)
-			vim.opt.conceallevel = 1
+			-- vim.opt.conceallevel = 1
 			require("obsidian").setup(opts)
 			vim.keymap.set("n", "gf", function()
 				if require("obsidian").util.cursor_on_markdown_link() then
