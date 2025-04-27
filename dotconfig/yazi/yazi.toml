@@ -8,8 +8,14 @@ video = [
 open = [
     { run = 'xdg-open "$@"'}
 ]
+document = [
+	{ run = 'zathura "$@"', for = "unix" },
+]
 
 [open]
+prepend_rules = [
+	{ name = "*.pdf", use = "document" },
+]
 rules = [
 	{ mime = "video/*", use = "video" },
     { mime = "image/*", use = "open"}
