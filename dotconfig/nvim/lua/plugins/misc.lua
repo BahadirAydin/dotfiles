@@ -151,7 +151,6 @@ return {
 				folder = "Günlük",
 				date_format = "%Y-%d-%m",
 			},
-
 			ui = {
 				enable = false,
 			},
