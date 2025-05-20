@@ -152,6 +152,9 @@ return {
 				date_format = "%Y-%d-%m",
 			},
 
+			ui = {
+				enable = false,
+			},
 			completion = {
 				nvim_cmp = true,
 				blink = false,
