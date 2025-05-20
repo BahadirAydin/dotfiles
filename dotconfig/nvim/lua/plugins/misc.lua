@@ -203,4 +203,8 @@ return {
 			end, { noremap = false, expr = true })
 		end,
 	},
+	{
+		"folke/zen-mode.nvim",
+		opts = {},
+	},
 }
