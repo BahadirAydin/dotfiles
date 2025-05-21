@@ -1,8 +1,9 @@
 return {
 	{
 		"windwp/nvim-autopairs",
+		event = "InsertEnter",
 		opts = {
-			disable_filetype = { "TelescopePrompt", "vim" },
+			disable_filetype = { "TelescopePrompt", "spectre_panel", "snacks_picker_input", "markdown" },
 		},
 	},
 	{
@@ -11,7 +12,7 @@ return {
 	},
 	{
 		"kylechui/nvim-surround",
-		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
 		event = "VeryLazy",
 		config = function()
 			require("nvim-surround").setup({})
@@ -91,6 +92,6 @@ return {
 		"m4xshen/hardtime.nvim",
 		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = {},
+		opts = { disabled_filetypes = { "cmake_tools_terminal" } },
 	},
 }
