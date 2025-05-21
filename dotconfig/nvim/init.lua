@@ -13,14 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.termguicolors = true
 
+vim.opt.scrolloff = 10
+
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
-
-vim.keymap.set("n", "<leader>p", "<cmd>bprevious<CR>", { silent = true })
-vim.keymap.set("n", "<leader>n", "<cmd>bnext<CR>", { silent = true })
-
-vim.keymap.set("n", "<F7>", "<cmd>tabprevious<CR>", { silent = true })
-vim.keymap.set("n", "<F8>", "<cmd>tabnext<CR>", { silent = true })
 
 vim.keymap.set(
 	"n",
