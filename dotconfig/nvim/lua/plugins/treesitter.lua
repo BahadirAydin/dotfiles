@@ -8,6 +8,7 @@ return {
 			vim.cmd([[TSUpdate]])
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
+					"regex",
 					"c",
 					"cpp",
 					"rust",
