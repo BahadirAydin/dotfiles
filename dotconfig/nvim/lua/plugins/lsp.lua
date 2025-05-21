@@ -20,10 +20,9 @@ local M = {
 		require("lspconfig").texlab.setup({
 			capabilities = capabilities,
 		})
-		-- rustaceanvim manages the rust-analyzer setup
-		-- require("lspconfig").rust_analyzer.setup({
-		-- 	capabilities = capabilities,
-		-- })
+		require("lspconfig").rust_analyzer.setup({
+			capabilities = capabilities,
+		})
 		require("lspconfig").svelte.setup({
 			capabilities = capabilities,
 		})
@@ -70,9 +69,4 @@ local M = {
 }
 return {
 	M,
-	{
-		"mrcjkb/rustaceanvim",
-		version = "^6", -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
 }
