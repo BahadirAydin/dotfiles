@@ -2,7 +2,15 @@ return {
 	-- CMake integration
 	{
 		"Civitasv/cmake-tools.nvim",
-		opts = {},
+		opts = {
+			cmake_build_directory = function()
+				local osys = require("cmake-tools.osys")
+				if osys.iswin32 then
+					return "out\\${variant:buildType}"
+				end
+				return "out/${variant:buildType}"
+			end,
+		},
 		keys = {
 			{ "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake: Generate" },
 			{ "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake: Build" },
