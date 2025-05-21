@@ -69,4 +69,11 @@ local M = {
 }
 return {
 	M,
+	{
+		"p00f/clangd_extensions.nvim",
+		opts = {},
+		keys = {
+			{ "<leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source Header" },
+		},
+	},
 }
