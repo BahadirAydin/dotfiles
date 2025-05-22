@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 
 vim.keymap.set(
 	"n",
-	"<leader>d",
+	"<leader><tab>",
 	"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>",
 	{ silent = true, desc = "Floating diagnostics window." }
 )
