@@ -93,26 +93,9 @@ return {
 		"sindrets/diffview.nvim",
 		opts = {},
 		keys = {
-			{
-				"<leader>dd",
-				"<cmd>DiffviewOpen<CR>",
-				{ silent = true },
-			},
-			{
-				"<leader>dc",
-				"<cmd>DiffviewClose<CR>",
-				{ silent = true },
-			},
-			{
-				"<leader>df",
-				"<cmd>DiffviewFileHistory<CR>",
-				{ silent = true },
-			},
+			{ "<leader>dd", "<cmd>DiffviewOpen<CR>", desc = "Diffview open", silent = true },
+			{ "<leader>dc", "<cmd>DiffviewClose<CR>", desc = "Diffview close", silent = true },
+			{ "<leader>df", "<cmd>DiffviewFileHistory<CR>", desc = "Diffview file history", silent = true },
 		},
-	},
-	{
-		"akinsho/git-conflict.nvim",
-		version = "*",
-		config = true,
 	},
 }
