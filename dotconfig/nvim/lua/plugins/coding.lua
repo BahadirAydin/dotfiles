@@ -57,9 +57,10 @@ return {
 	},
 	{
 		"aznhe21/actions-preview.nvim",
-		config = function()
-			vim.keymap.set({ "v", "n" }, "<leader>ca", require("actions-preview").code_actions)
-		end,
+		opts = {},
+		keys = {
+			{ "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr>", desc = "Code Actions Preview" },
+		},
 	},
 	{
 		"kevinhwang91/nvim-ufo",
