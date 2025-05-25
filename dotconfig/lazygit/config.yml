@@ -1,0 +1,19 @@
+customCommands:
+  - command: "git commit -m '{{ .Form.emoji }} {{ if .Form.scope }} ({{ .Form.scope }}): {{ end }} {{ .Form.message }}'"
+    context: files
+    description: Commit changes using gitmojis
+    key: C
+    prompts:
+    - command: gitmoji -l
+      filter: ^(.*?) - (:.*?:) - (.*)$
+      key: emoji
+      labelFormat: '{{ .group_1 }} - {{ .group_3 }}'
+      title: 'Choose a gitmoji: '
+      type: menuFromCommand
+      valueFormat: '{{ .group_2 }}'
+    - key: scope
+      title: 'Enter the scope of current changes: '
+      type: input
+    - key: message
+      title: 'Enter the commit title: '
+      type: input
