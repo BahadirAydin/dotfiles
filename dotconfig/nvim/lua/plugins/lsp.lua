@@ -12,7 +12,21 @@ local M = {
 		clangd_capabilities.offsetEncoding = "utf-8"
 		require("lspconfig").clangd.setup({
 			capabilities = clangd_capabilities,
-			cmd = { "clangd", "--clang-tidy", "--background-index" },
+			cmd = {
+				"clangd",
+				"--clang-tidy",
+				"--background-index",
+				"--background-index-priority=background",
+				"--completion-style=detailed",
+				"--header-insertion=iwyu",
+				"-j 2",
+			},
+			root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
+			settings = {
+				clangd = {
+					semanticHighlighting = true,
+				},
+			},
 		})
 		require("lspconfig").pyright.setup({
 			capabilities = capabilities,
@@ -32,7 +46,12 @@ local M = {
 		require("lspconfig").tailwindcss.setup({
 			capabilities = capabilities,
 		})
-		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+		vim.keymap.set(
+			"n",
+			"<leader><tab>",
+			"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>",
+			{ silent = true, desc = "Floating diagnostics window." }
+		)
 		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
