@@ -14,3 +14,4 @@
 **/qBittorrent/
 QtProject.conf
 **/watch_later/
+/dotconfig/lazygit/state.yml
