@@ -3,3 +3,4 @@ installed_packages_sway.txt
 assets/
 etc/
 README.md
+private_dot_config/lazygit/state.yml
