@@ -1,11 +1,16 @@
 return {
 	{
 		"folke/which-key.nvim",
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 500
-			require("which-key").setup({})
-		end,
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>?",
+				function()
+					require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
 	},
 	{
 		"stevearc/oil.nvim",
@@ -45,21 +50,33 @@ return {
 		"obsidian-nvim/obsidian.nvim",
 		version = "*",
 		lazy = true,
-		event = { "BufReadPre /home/bahadir/BahadirAydin/Notes/**.md" },
+		enabled = vim.fn.isdirectory(vim.fn.expand("~/BahadirAydin/Notes")) == 1,
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"hrsh7th/nvim-cmp",
 			"nvim-telescope/telescope.nvim",
 		},
+		keys = {
+			{ "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "Obsidian Open" },
+			{ "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian Find Files" },
+			{ "<leader>nt", "<cmd>ObsidianToday<cr>", desc = "Obsidian Today" },
+		},
 		opts = {
 			dir = "~/BahadirAydin/Notes",
 			daily_notes = {
 				folder = "Günlük",
-				date_format = "%Y-%d-%m",
+				date_format = "%Y-%m-%d",
 			},
 			ui = {
 				enable = false,
+				checkboxes = {
+					[" "] = { char = "󱍫", hl_group = "DiagnosticInfo" },
+					["x"] = { char = "󱍧", hl_group = "DiagnosticOk" },
+					["/"] = { char = "󱍬", hl_group = "DiagnosticWarn" },
+					["%-"] = { char = "󱍮", hl_group = "DiagnosticError" },
+					["%?"] = { char = "󱍥", hl_group = "DiagnosticWarn" },
+				},
 			},
 			completion = {
 				nvim_cmp = true,
@@ -95,7 +112,7 @@ return {
 				vim.fn.jobstart({ "open", url })
 			end,
 			use_advanced_uri = true,
-			finder = "telescope.nvim",
+			finder = "fzf-lua",
 		},
 		config = function(_, opts)
 			-- vim.opt.conceallevel = 1
