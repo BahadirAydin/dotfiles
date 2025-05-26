@@ -82,7 +82,7 @@ local M = {
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 				-- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-				vim.keymap.set("n", "<leader>f", function()
+				vim.keymap.set("n", "<leader>ss", function()
 					vim.lsp.buf.format({ async = true })
 				end, opts)
 			end,
@@ -94,6 +94,7 @@ return {
 	{
 		"p00f/clangd_extensions.nvim",
 		opts = {},
+		ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
 		keys = {
 			{ "<leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source Header" },
 		},
