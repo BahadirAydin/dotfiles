@@ -12,9 +12,26 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		config = function()
-			require("ibl").setup({})
-		end,
+		opts = {
+			exclude = {
+				filetypes = {
+					"help",
+					"markdown",
+					"text",
+					"dashboard",
+					"lazy",
+					"mason",
+					"checkhealth",
+					"man",
+					"lspinfo",
+					"TelescopePrompt",
+					"TelescopeResults",
+					"git",
+					"gitcommit",
+					"",
+				},
+			},
+		},
 	},
 	{
 		"folke/todo-comments.nvim",
