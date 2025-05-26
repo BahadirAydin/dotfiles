@@ -1,0 +1,36 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/bahadir/.local/share/chezmoi
+    - /home/bahadir/BahadirAydin/dotfiles
+    - /home/bahadir/BahadirAydin/Akademi/CENG334/operating-systems-hw/hw1
+    - /home/bahadir/BahadirAydin/Learn/cmake-examples
+    - /home/bahadir/BahadirAydin/Akademi/CENG334/operating-systems-hw
+    - /home/bahadir/BahadirAydin/Notes
+    - /home/bahadir/BahadirAydin/Projects/markov-chains-turkish-literature
+    - /home/bahadir/BahadirAydin/Projects/bahadiraydin.com
+    - /home/bahadir/BahadirAydin/Projects/bahadiraydin.com/src/articles
+    - /home/bahadir/BahadirAydin/Projects/yatirim-api
+    - /home/bahadir/BahadirAydin/Akademi/CENG562/project/ceng562-ml
+    - /home/bahadir/BahadirAydin/Akademi/CENG562/project/ml-term-project
+    - /home/bahadir/BahadirAydin/Projects/aoc/advent-of-code-2024
+    - /home/bahadir/BahadirAydin/Projects/odtu-twitter-bot
+    - /home/bahadir/BahadirAydin/Projects/aoc/advent-of-code-2023
+    - /home/bahadir/BahadirAydin/Projects/aoc/advent-of-code-2020
+    - /home/bahadir/BahadirAydin/Akademi/CENG49x/everest
+    - /home/bahadir/BahadirAydin/Projects/metu-scheduler-ui
+    - /home/bahadir/BahadirAydin/Projects/metu-scheduler
+    - /home/bahadir/BahadirAydin/Projects/leetcode
+    - /home/bahadir/BahadirAydin/Projects/aoc/advent-of-code-2022
+    - /home/bahadir/BahadirAydin/Projects/learning-rust
+startuppopupversion: 5
+lastversion: 0.51.1
+customcommandshistory:
+    - q
+hidecommandlog: true
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+renamesimilaritythreshold: 50
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
