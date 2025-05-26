@@ -1,6 +1,6 @@
 customCommands:
   - command: >
-      git commit -m '{{.Form.Type}} {{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
+      git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
     context: files
     description: "Create new conventional commit with emoji"
     key: C
@@ -31,6 +31,8 @@ customCommands:
             value: "📦 build"
           - name: "⏪ revert - Reverts a previous commit"
             value: "⏪ revert"
+          - name: "🔖 release - Release a new tag."
+            value: "🔖 release"
       - type: "input"
         title: "Scope"
         key: "Scope"
@@ -52,4 +54,3 @@ customCommands:
         title: "Commit"
         body: "Are you sure you want to commit?"
     loadingText: "Creating commit..."
-
