@@ -1,6 +1,6 @@
 customCommands:
   - command: >
-      git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
+      git commit -m '{{.Form.Type}} {{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
     context: files
     description: "Create new conventional commit with emoji"
     key: C

@@ -25,17 +25,25 @@
 
 window {
     background-color:   @bg0;
-
+    border:       5px;
+    border-radius: 10px;
+    padding:        0.5em;
     location:       center;
     width:          480;
     border-radius:  8;
 }
 
+
+mainbox {
+  spacing: 0px;
+  children: [message,inputbar,listview];
+}
+
 inputbar {
-    font:       "JetBrains Mono Nerd Font 14";
+    font:       "JetBrains Mono Nerd Font 12";
     padding:    12px;
     spacing:    12px;
-    children:   [ icon-search, entry ];
+    children:   [ icon-search, entry,overlay,case-indicator ];
 }
 
 icon-search {
@@ -56,13 +64,22 @@ entry {
 }
 
 message {
+    enable: true;
     border:             2px 0 0;
     border-color:       @bg1;
     background-color:   @bg1;
 }
 
 textbox {
-    padding:    8px 16px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    placeholder-color:           inherit;
+    blink:                       true;
+    markup:                      true;
+    size:                        400em;
+    font: "JetBrainsMono Bold 15";
 }
 
 listview {

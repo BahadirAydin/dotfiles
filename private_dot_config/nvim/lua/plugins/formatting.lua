@@ -13,7 +13,6 @@ return {
 				null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.prettierd,
-				null_ls.builtins.formatting.cmake_format,
 				null_ls.builtins.diagnostics.sqlfluff.with({
 					extra_args = { "--dialect", "postgres" },
 				}),
