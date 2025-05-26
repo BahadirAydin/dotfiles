@@ -3,7 +3,7 @@ return {
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {
-			disable_filetype = { "TelescopePrompt", "spectre_panel", "snacks_picker_input", "markdown" },
+			disable_filetype = { "TelescopePrompt", "spectre_panel", "snacks_picker_input", "markdown", "grug-far" },
 		},
 	},
 	{
@@ -19,43 +19,6 @@ return {
 		end,
 	},
 	{
-		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
-		cmd = "Trouble",
-		keys = {
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
-			},
-			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
-			},
-			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
-			},
-		},
-	},
-	{
 		"aznhe21/actions-preview.nvim",
 		opts = {},
 		keys = {
@@ -64,6 +27,7 @@ return {
 	},
 	{
 		"kevinhwang91/nvim-ufo",
+		event = "VeryLazy",
 		dependencies = {
 			"kevinhwang91/promise-async",
 		},
@@ -88,7 +52,34 @@ return {
 			require("ufo").setup()
 		end,
 	},
-	-- { "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"MagicDuck/grug-far.nvim",
+		opts = {
+			startInInsertMode = false,
+		},
+		keys = {
+			{
+				"<leader>s;",
+				function()
+					require("grug-far").open({})
+				end,
+				desc = "GrugFar",
+			},
+			{
+				"<leader>s;",
+				function()
+					require("grug-far").with_visual_selection({
+						prefills = {
+							search = vim.fn.expand("<cword>"),
+							filesFilter = vim.fn.expand("%"),
+						},
+					})
+				end,
+				mode = "v",
+				desc = "GrugFar",
+			},
+		},
+	},
 	{
 		"m4xshen/hardtime.nvim",
 		lazy = false,
