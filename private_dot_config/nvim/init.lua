@@ -17,6 +17,7 @@ vim.opt.scrolloff = 10
 
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "C-l", "<cmd>noh<CR>", { silent = true, desc = "Clear search highlight." })
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Show code actions." })
