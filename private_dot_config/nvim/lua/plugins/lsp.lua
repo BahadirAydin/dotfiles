@@ -28,10 +28,13 @@ local M = {
 				},
 			},
 		})
-		require("lspconfig").pyright.setup({
+		require("lspconfig").cmake.setup({
 			capabilities = capabilities,
 		})
-		require("lspconfig").texlab.setup({
+		require("lspconfig").basedpyright.setup({
+			capabilities = capabilities,
+		})
+		require("lspconfig").marksman.setup({
 			capabilities = capabilities,
 		})
 		require("lspconfig").rust_analyzer.setup({
