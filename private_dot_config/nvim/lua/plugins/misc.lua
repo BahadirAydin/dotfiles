@@ -54,7 +54,7 @@ return {
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
+			"saghen/blink.cmp",
 			"nvim-telescope/telescope.nvim",
 		},
 		keys = {
@@ -79,8 +79,8 @@ return {
 				},
 			},
 			completion = {
-				nvim_cmp = true,
-				blink = false,
+				nvim_cmp = false,
+				blink = true,
 				min_chars = 2,
 			},
 			note_id_func = function(title)

@@ -1,54 +1,62 @@
 local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+		"saghen/blink.cmp",
 	},
-	config = function()
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		local clangd_capabilities = vim.deepcopy(capabilities)
-		clangd_capabilities.offsetEncoding = "utf-8"
-		require("lspconfig").clangd.setup({
-			capabilities = clangd_capabilities,
-			cmd = {
-				"clangd",
-				"--clang-tidy",
-				"--background-index",
-				"--background-index-priority=background",
-				"--completion-style=detailed",
-				"--header-insertion=iwyu",
-				"-j 2",
-			},
-			root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
-			settings = {
-				clangd = {
-					semanticHighlighting = true,
+	opts = {
+		servers = {
+			clangd = {
+				cmd = {
+					"clangd",
+					"--clang-tidy",
+					"--background-index",
+					"--background-index-priority=background",
+					"--completion-style=detailed",
+					"--header-insertion=iwyu",
+					"-j",
+					"2",
+				},
+				root_dir = function()
+					local util = require("lspconfig.util")
+					return util.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
+				end,
+				capabilities = {
+					offsetEncoding = { "utf-8" },
+				},
+				settings = {
+					clangd = {
+						semanticHighlighting = true,
+					},
 				},
 			},
-		})
-		require("lspconfig").cmake.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").basedpyright.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").marksman.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").rust_analyzer.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").svelte.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").gopls.setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig").tailwindcss.setup({
-			capabilities = capabilities,
-		})
+			cmake = {},
+			basedpyright = {},
+			marksman = {
+                filetypes = { "markdown", "mdx" },
+            },
+			rust_analyzer = {},
+			svelte = {},
+			gopls = {},
+			tailwindcss = {
+				filetypes = {
+					"html",
+					"mdx",
+					"css",
+					"postcss",
+					"sass",
+					"scss",
+					"javascript",
+					"typescript",
+					"svelte",
+				},
+			},
+		},
+	},
+	config = function(_, opts)
+		-- vim.diagnostic.config({
+		-- 	virtual_text = false,
+		-- })
+
 		vim.keymap.set(
 			"n",
 			"<leader><tab>",
@@ -62,11 +70,7 @@ local M = {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
-				-- Enable completion triggered by <c-x><c-o>
 				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-				-- Buffer local mappings.
-				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf }
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -80,15 +84,21 @@ local M = {
 				end, opts)
 				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				-- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 				vim.keymap.set("n", "<leader>ss", function()
 					vim.lsp.buf.format({ async = true })
 				end, opts)
 			end,
 		})
+
+		local lspconfig = require("lspconfig")
+		for server, config in pairs(opts.servers) do
+			config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
+			lspconfig[server].setup(config)
+		end
 	end,
 }
+
 return {
 	M,
 	{
@@ -96,7 +106,7 @@ return {
 		opts = {},
 		ft = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
 		keys = {
-			{ "<leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source Header" },
+			{ "<leader>sh", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source Header" },
 		},
 	},
 }
