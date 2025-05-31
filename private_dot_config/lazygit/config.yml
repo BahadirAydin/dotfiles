@@ -2,6 +2,8 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+  merging:
+    args: "--no-ff"
 customCommands:
   - command: >
       git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
