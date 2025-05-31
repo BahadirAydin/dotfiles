@@ -4,3 +4,4 @@ assets/
 etc/
 README.md
 private_dot_config/lazygit/state.yml
+~/.config/lazygit/state.yml
