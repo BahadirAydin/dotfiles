@@ -18,7 +18,6 @@ send_notification () {
     dunstify -i "$brightnessicon" -t 1600 -h string:x-dunst-stack-tag:brightness -u normal "Brightness" -h int:value:"$b"
 }
 brightness_check () {
-    get_brightness
     if [ "$b" -ge 70 ]; then
         brightnessicon="$brightness_icon_high"
     elif [ "$b" -ge 50 ]; then
@@ -32,13 +31,15 @@ brightness_check () {
 }
 case $1 in
     down)
-	brightness_check
         brightnessctl set 10%- > /dev/null
+        get_brightness
+        brightness_check
         send_notification
         ;;
     up)
-	brightness_check
         brightnessctl set +10% > /dev/null
+        get_brightness
+        brightness_check
         send_notification
         ;;
 esac
