@@ -95,7 +95,8 @@ return {
 		cmd = { "FzfLua" },
 		keys = {
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find All Files" },
-			{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Grep" },
+			{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep" },
+			{ "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "Resume Search" },
 		},
 		opts = {
 			hls = {
