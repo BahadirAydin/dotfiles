@@ -1,0 +1,9 @@
+bottom
+diesel_cli
+du-dust
+jless
+lsd
+sqlx-cli
+starship
+stylua
+texlab
