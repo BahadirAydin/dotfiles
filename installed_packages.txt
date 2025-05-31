@@ -18,6 +18,7 @@ firefox
 fish
 gimp
 git 
+git-delta
 git-extras
 glow
 grim
