@@ -3,6 +3,7 @@ base
 base-devel
 bat
 bc
+bibata-cursor-theme
 blueman
 bluez
 brightnessctl
