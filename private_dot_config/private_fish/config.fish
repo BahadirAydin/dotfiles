@@ -68,5 +68,9 @@ function pdf
     nohup zathura "$(fd -e pdf -e djvu --type f | fzf)" &>/dev/null &
 end
 
+function epub
+    nohup zathura "$(fd -e epub --type f | fzf)" &>/dev/null &
+end
+
 zoxide init --cmd cd fish | source
 direnv hook fish | source
