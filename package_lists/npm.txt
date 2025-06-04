@@ -1,9 +1,10 @@
 @fsouza/prettierd@0.25.3
 @tailwindcss/language-server@0.0.16
 commitizen@4.3.0
-corepack@0.32.0
+corepack@0.31.0
 node-gyp@11.2.0
 nopt@7.2.1
 npm@11.4.1
 semver@7.7.2
 svelte-language-server@0.15.19
+yarn@1.22.22

@@ -28,7 +28,6 @@ fastfetch
 fd
 feh
 ffmpegthumbnailer
-firebase-tools
 firefox
 fish
 fx
@@ -40,6 +39,7 @@ git-crypt
 git-delta
 git-extras
 git-filter-repo
+github-cli
 gitleaks
 glfw
 glow
@@ -65,6 +65,7 @@ iw
 jq
 jre-openjdk
 jupyter-notebook
+just
 lazygit
 libcaca
 libinput-gestures
@@ -82,7 +83,6 @@ neovim
 network-manager-applet
 networkmanager
 noto-fonts-emoji
-npm
 ntfs-3g
 obs-studio
 obsidian
@@ -124,6 +124,7 @@ typos
 unrar
 unzip
 usbutils
+watchexec
 waybar
 wget
 which

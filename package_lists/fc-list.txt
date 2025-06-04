@@ -1,6 +1,5 @@
 Adwaita Mono
 Adwaita Sans
-Cantarell
 FiraCode Nerd Font Mono
 FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Light
 FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Med
