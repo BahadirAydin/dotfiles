@@ -109,7 +109,7 @@ raindrop
 rclone
 ripgrep
 ripgrep-all
-rofi-lbonn-wayland
+rofi-wayland
 rofimoji
 rsync
 slurp
