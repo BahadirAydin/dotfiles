@@ -1,0 +1,5 @@
+#!/bin/bash
+nohup hyprlock >/dev/null 2>&1 &
+disown
+sleep 0.5
+systemctl suspend
