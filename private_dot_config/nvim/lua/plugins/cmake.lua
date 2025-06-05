@@ -12,7 +12,7 @@ return {
 			end,
 		},
 		keys = {
-			{ "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake: Generate" },
+			{ "<leader>cg", "<cmd>CMakeGenerate Ninja<cr>", desc = "CMake: Generate" },
 			{ "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake: Build" },
 			{ "<leader>cc", "<cmd>CMakeClean<cr>", desc = "CMake: Clean" },
 			{ "<leader>ct", "<cmd>CMakeSelectBuildType<cr>", desc = "CMake: Select build type" },
