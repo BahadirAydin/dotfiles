@@ -10,6 +10,10 @@ return {
 				end
 				return "out/${variant:buildType}"
 			end,
+			cmake_notifications = {
+				runner = { enabled = false },
+				executor = { enabled = false },
+			},
 		},
 		keys = {
 			{ "<leader>cg", "<cmd>CMakeGenerate Ninja<cr>", desc = "CMake: Generate" },
