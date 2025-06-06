@@ -80,6 +80,7 @@ luarocks
 man-db
 man-pages
 mesa-utils
+navi
 nemo
 neovim
 network-manager-applet
