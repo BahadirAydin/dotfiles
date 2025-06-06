@@ -18,6 +18,12 @@ return {
 							key = "u",
 						},
 						{
+							desc = " Mason",
+							group = "@property",
+							action = "Mason",
+							key = "m",
+						},
+						{
 							icon = " ",
 							icon_hl = "@variable",
 							desc = "Files",
