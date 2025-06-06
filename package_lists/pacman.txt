@@ -36,6 +36,7 @@ fzf
 gdb
 gimp
 git
+git-cliff
 git-crypt
 git-delta
 git-extras
