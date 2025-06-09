@@ -79,7 +79,8 @@ function epub
 end
 
 function notes
-    nvim ~/BahadirAydin/Notes/
+    set notes_dir ~/BahadirAydin/Notes
+    cd $notes_dir && nvim .
 end
 
 #############
