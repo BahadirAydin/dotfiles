@@ -1,9 +1,10 @@
 bottom
-diesel_cli
+cargo-binstall
+cargo-release
 du-dust
+git-graph
 jless
 lsd
 sqlx-cli
 starship
 stylua
-texlab

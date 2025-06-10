@@ -122,6 +122,7 @@ tealdeer
 thunderbird
 tokei
 trash-cli
+tree
 ttf-jetbrains-mono-nerd
 typos
 unrar
