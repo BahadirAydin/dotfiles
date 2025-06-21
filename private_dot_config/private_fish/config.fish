@@ -80,7 +80,7 @@ end
 
 function notes
     set notes_dir ~/BahadirAydin/Notes
-    cd $notes_dir && nvim .
+    cd $notes_dir && nvim
 end
 
 #############
