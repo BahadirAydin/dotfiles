@@ -32,8 +32,8 @@ local M = {
 			cmake = {},
 			basedpyright = {},
 			marksman = {
-                filetypes = { "markdown", "mdx" },
-            },
+				filetypes = { "markdown", "mdx" },
+			},
 			rust_analyzer = {},
 			svelte = {},
 			gopls = {},
@@ -50,6 +50,7 @@ local M = {
 					"svelte",
 				},
 			},
+			ts_ls = {},
 		},
 	},
 	config = function(_, opts)
