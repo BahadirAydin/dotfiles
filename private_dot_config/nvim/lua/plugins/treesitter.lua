@@ -16,7 +16,7 @@ return {
 					"lua",
 					"python",
 					"bash",
-                    "cmake",
+					"cmake",
 					"markdown",
 					"diff",
 					"json",
@@ -29,8 +29,8 @@ return {
 				highlight = {
 					enable = true, -- false will disable the whole extension
 					disable = {}, -- list of language that will be disabled
+					additional_vim_regex_highlighting = false,
 				},
-				additional_vim_regex_highlighting = false,
 				textobjects = {
 					select = {
 						enable = true,
