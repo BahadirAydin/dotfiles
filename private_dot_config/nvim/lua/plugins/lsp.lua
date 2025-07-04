@@ -3,6 +3,7 @@ local M = {
 	dependencies = {
 		"saghen/blink.cmp",
 	},
+	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		servers = {
 			clangd = {
@@ -51,6 +52,7 @@ local M = {
 				},
 			},
 			ts_ls = {},
+			texlab = {},
 		},
 	},
 	config = function(_, opts)
