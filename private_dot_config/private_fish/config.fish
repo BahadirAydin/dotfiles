@@ -65,14 +65,14 @@ function quiet
 end
 
 function pdf
-    set file (fd -e pdf -e djvu --type f | fzf)
+    set file (fd --no-ignore -e pdf -e djvu --type f | fzf)
     if test -n "$file"
         nohup zathura "$file" &>/dev/null &
     end
 end
 
 function epub
-    set file (fd -e epub --type f | fzf)
+    set file (fd --no-ignore -e epub --type f | fzf)
     if test -n "$file"
         nohup zathura "$file" &>/dev/null &
     end
