@@ -6,9 +6,11 @@ git:
     args: "--no-ff"
 customCommands:
   - command: >
-      git commit -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'
+      git commit 
+      -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}' 
+      {{if .Form.Description}}-m '{{.Form.Description}}'{{end}}
     context: files
-    description: "Create new conventional commit with emoji"
+    description: "Create new conventional commit with emoji and optional description"
     key: C
     prompts:
       - type: "menu"
@@ -52,8 +54,12 @@ customCommands:
           - name: "yes"
             value: "!"
       - type: "input"
-        title: "Commit message"
+        title: "Commit Message"
         key: "Message"
+        initialValue: ""
+      - type: "input"
+        title: "Commit Description (Optional)"
+        key: "Description"
         initialValue: ""
       - type: "confirm"
         key: "Confirm"
