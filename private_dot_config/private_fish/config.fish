@@ -20,6 +20,9 @@ set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -Ux GOPATH $XDG_DATA_HOME/go
 
+set -x CC clang
+set -x CXX clang++
+
 ###########
 # STARTUP #
 ###########
