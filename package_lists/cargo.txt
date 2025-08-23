@@ -1,5 +1,8 @@
 bottom
 cargo-binstall
+cargo-generate
+cargo-llvm-cov
+cargo-nextest
 cargo-release
 du-dust
 git-graph
@@ -8,3 +11,4 @@ lsd
 sqlx-cli
 starship
 stylua
+uv

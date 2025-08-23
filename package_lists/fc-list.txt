@@ -1,5 +1,7 @@
 Adwaita Mono
 Adwaita Sans
+C059
+D050000L
 FiraCode Nerd Font Mono
 FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Light
 FiraCode Nerd Font Mono,FiraCode Nerd Font Mono Med
@@ -52,6 +54,10 @@ Liberation Sans
 Liberation Serif
 MesloLGS NF
 mononoki
+Nimbus Mono PS
+Nimbus Roman
+Nimbus Sans
+Nimbus Sans Narrow
 Noto Color Emoji
 Noto Fangsong KSS Rotated
 Noto Fangsong KSS Vertical
@@ -339,6 +345,7 @@ Noto Sans Sora Sompeng
 Noto Sans Sora Sompeng,Noto Sans Sora Sompeng Medium
 Noto Sans Soyombo
 Noto Sans Sundanese
+Noto Sans Sunuwar
 Noto Sans Syloti Nagri
 Noto Sans Symbols
 Noto Sans Symbols 2
@@ -547,6 +554,7 @@ Noto Serif Yezidi,Noto Serif Yezidi Medium
 Noto Traditional Nushu
 Noto Traditional Nushu,Noto Traditional Nushu Light
 Noto Znamenny Musical Notation
+P052
 SF UI Display
 Source Code Pro
 Source Code Pro,Source Code Pro Black
@@ -555,4 +563,8 @@ Source Code Pro,Source Code Pro Light
 Source Code Pro,Source Code Pro Medium
 Source Code Pro,Source Code Pro Semibold
 SourceCodeVF
+Standard Symbols PS
 Symbols Nerd Font
+URW Bookman
+URW Gothic
+Z003
