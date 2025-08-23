@@ -58,11 +58,18 @@ return {
 			"nvim-telescope/telescope.nvim",
 		},
 		keys = {
-			{ "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "Obsidian Open" },
-			{ "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian Find Files" },
-			{ "<leader>nt", "<cmd>ObsidianToday<cr>", desc = "Obsidian Today" },
+			{ "<leader>no", "<cmd>Obsidian open<cr>", desc = "Obsidian Open" },
+			{ "<leader>nf", "<cmd>Obsidian quick_switch<cr>", desc = "Obsidian Find Files" },
+			{ "<leader>nt", "<cmd>Obsidian today<cr>", desc = "Obsidian Today" },
 		},
 		opts = {
+			legacy_commands = false,
+			workspaces = {
+				{
+					name = "Notes",
+					path = "~/BahadirAydin/Notes",
+				},
+			},
 			dir = "~/BahadirAydin/Notes",
 			daily_notes = {
 				folder = "Günlük",
@@ -70,13 +77,6 @@ return {
 			},
 			ui = {
 				enable = false,
-				checkboxes = {
-					[" "] = { char = "󱍫", hl_group = "DiagnosticInfo" },
-					["x"] = { char = "󱍧", hl_group = "DiagnosticOk" },
-					["/"] = { char = "󱍬", hl_group = "DiagnosticWarn" },
-					["%-"] = { char = "󱍮", hl_group = "DiagnosticError" },
-					["%?"] = { char = "󱍥", hl_group = "DiagnosticWarn" },
-				},
 			},
 			completion = {
 				nvim_cmp = false,
@@ -111,7 +111,6 @@ return {
 			follow_url_func = function(url)
 				vim.fn.jobstart({ "open", url })
 			end,
-			use_advanced_uri = true,
 			finder = "fzf-lua",
 		},
 		config = function(_, opts)
@@ -119,7 +118,7 @@ return {
 			require("obsidian").setup(opts)
 			vim.keymap.set("n", "gf", function()
 				if require("obsidian").util.cursor_on_markdown_link() then
-					return "<cmd>ObsidianFollowLink<CR>"
+					return "<cmd>Obsidian follow_link<CR>"
 				else
 					return "gf"
 				end
