@@ -1,3 +1,6 @@
-@google/gemini-cli@0.1.4
+@google/gemini-cli@0.1.13
 corepack@0.32.0
-npm@10.9.2
+expo@53.0.19
+npm@11.4.2
+to@0.2.9
+update@0.7.4
