@@ -94,11 +94,12 @@ local M = {
 			end,
 		})
 
-		local lspconfig = require("lspconfig")
 		for server, config in pairs(opts.servers) do
 			config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
-			lspconfig[server].setup(config)
+			vim.lsp.config(server, config)
 		end
+
+		vim.lsp.enable(vim.tbl_keys(opts.servers))
 	end,
 }
 
