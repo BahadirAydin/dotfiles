@@ -86,6 +86,26 @@ function notes
     cd $notes_dir && nvim
 end
 
+function daily
+    # Get current date components
+    set year (date +%Y)
+    set month (date +%m)
+    set date_str (date +%Y-%m-%d)
+    
+    # Define the base path
+    set base_path ~/BahadirAydin/Notes/Günlük
+    
+    # Create the directory structure
+    set target_dir $base_path/$year/$month
+    set target_file $target_dir/$date_str.md
+    
+    # Create directories if they don't exist
+    mkdir -p $target_dir
+    
+    # Open the file with nvim
+    nvim $target_file
+end
+
 #############
 #   HOOKS   #
 #############
