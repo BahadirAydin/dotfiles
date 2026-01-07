@@ -1,14 +1,13 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
   merging:
     args: "--no-ff"
 customCommands:
   - command: >
-      git commit 
-      -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}' 
-      {{if .Form.Description}}-m '{{.Form.Description}}'{{end}}
+      git commit  -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'  {{if .Form.Description}}-m '{{.Form.Description}}'{{end}}
+
     context: files
     description: "Create new conventional commit with emoji and optional description"
     key: C
@@ -19,28 +18,28 @@ customCommands:
         options:
           - name: "✨ feat - A new feature"
             value: "✨ feat"
-          - name: "🐛 fix - A bug fix"
-            value: "🐛 fix"
-          - name: "📝 docs - Documentation only changes"
-            value: "📝 docs"
-          - name: "🎨 style - Code style changes (formatting, etc)"
-            value: "🎨 style"
+          - name: "\U0001F41B fix - A bug fix"
+            value: "\U0001F41B fix"
+          - name: "\U0001F4DD docs - Documentation only changes"
+            value: "\U0001F4DD docs"
+          - name: "\U0001F3A8 style - Code style changes (formatting, etc)"
+            value: "\U0001F3A8 style"
           - name: "♻️ refactor - Code change that neither fixes a bug nor adds a feature"
             value: "♻️ refactor"
-          - name: "🚀 perf - A code change that improves performance"
-            value: "🚀 perf"
+          - name: "\U0001F680 perf - A code change that improves performance"
+            value: "\U0001F680 perf"
           - name: "✅ test - Adding missing tests or correcting existing tests"
             value: "✅ test"
-          - name: "🔧 chore - Changes to the build process or auxiliary tools"
-            value: "🔧 chore"
-          - name: "👷 ci - Changes to CI configuration files and scripts"
-            value: "👷 ci"
-          - name: "📦 build - Changes that affect the build system or dependencies"
-            value: "📦 build"
+          - name: "\U0001F527 chore - Changes to the build process or auxiliary tools"
+            value: "\U0001F527 chore"
+          - name: "\U0001F477 ci - Changes to CI configuration files and scripts"
+            value: "\U0001F477 ci"
+          - name: "\U0001F4E6 build - Changes that affect the build system or dependencies"
+            value: "\U0001F4E6 build"
           - name: "⏪ revert - Reverts a previous commit"
             value: "⏪ revert"
-          - name: "🔖 release - Release a new tag."
-            value: "🔖 release"
+          - name: "\U0001F516 release - Release a new tag."
+            value: "\U0001F516 release"
       - type: "input"
         title: "Scope"
         key: "Scope"
