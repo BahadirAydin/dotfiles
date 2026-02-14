@@ -53,6 +53,7 @@ local M = {
 			},
 			ts_ls = {},
 			texlab = {},
+			copilot_ls = {},
 		},
 	},
 	config = function(_, opts)
