@@ -100,7 +100,7 @@ return {
 				return tostring(os.time()) .. "-" .. suffix
 			end,
 
-			disable_frontmatter = false,
+			frontmatter = { enabled = true },
 
 			-- templates = {
 			-- 	subdir = "templates",
@@ -108,9 +108,7 @@ return {
 			-- 	time_format = "%M:%H",
 			-- },
 
-			follow_url_func = function(url)
-				vim.fn.jobstart({ "open", url })
-			end,
+
 			finder = "fzf-lua",
 		},
 		config = function(_, opts)
