@@ -1,22 +1,21 @@
 [mgr]
-ratio = [0, 4 , 3]
+ratio = [0, 4, 3]
 
 [opener]
 video = [
-	{ run = 'celluloid "$@"'},
+    { run = 'celluloid %s', orphan = true, desc = 'Celluloid' }
 ]
 open = [
-    { run = 'xdg-open "$@"'}
+    { run = 'xdg-open %s', orphan = true, desc = 'Open' }
 ]
 document = [
-	{ run = 'zathura "$@"', for = "unix" },
+    { run = 'zathura %s', orphan = true, for = "unix", desc = 'Zathura' }
 ]
 
 [open]
+# Using prepend_rules for everything keeps Yazi's helpful defaults intact
 prepend_rules = [
-	{ name = "*.pdf", use = "document" },
-]
-rules = [
-	{ mime = "video/*", use = "video" },
-    { mime = "image/*", use = "open"}
+    { url = "*.pdf", use = "document" },
+    { mime = "video/*", use = "video" },
+    { mime = "image/*", use = "open" }
 ]
