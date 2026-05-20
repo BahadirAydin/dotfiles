@@ -11,10 +11,14 @@ open = [
 document = [
     { run = 'zathura %s', orphan = true, for = "unix", desc = 'Zathura' }
 ]
+csv = [
+    { run = 'csvlens %s', block = true, desc = 'csvlens' }
+]
 
 [open]
 # Using prepend_rules for everything keeps Yazi's helpful defaults intact
 prepend_rules = [
+    { url = "*.csv", use = "csv" },
     { url = "*.pdf", use = "document" },
     { mime = "video/*", use = "video" },
     { mime = "image/*", use = "open" }
