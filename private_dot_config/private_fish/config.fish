@@ -59,6 +59,8 @@ alias gst "git status"
 
 alias ssh-kitty "kitty +kitten ssh"
 
+alias oc "opencode"
+
 #############
 # FUNCTIONS #
 #############
