@@ -14,6 +14,7 @@
     "custom/weather",
     "backlight",
     "pulseaudio",
+    "custom/sink-toggle",
     "battery",
     "custom/power",
   ],
@@ -99,6 +100,14 @@
     "interval": 600,
     "exec": "~/.pyenv/versions/3.11.5/bin/python3.11 $HOME/.config/waybar/modules/weather.py",
     "on-click": "firefox https://wttr.in/Ankara",
+    "return-type": "json",
+  },
+  "custom/sink-toggle": {
+    "format": "{} ",
+    "tooltip": true,
+    "interval": 2,
+    "exec": "$HOME/.config/waybar/modules/sink-toggle.sh",
+    "on-click": "fish -c toggle-sink",
     "return-type": "json",
   },
   "custom/idle": {
