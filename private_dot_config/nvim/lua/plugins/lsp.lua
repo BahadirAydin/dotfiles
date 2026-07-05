@@ -53,7 +53,6 @@ local M = {
 			},
 			ts_ls = {},
 			texlab = {},
-			copilot_ls = {},
 		},
 	},
 	config = function(_, opts)
@@ -97,6 +96,9 @@ local M = {
 
 		for server, config in pairs(opts.servers) do
 			config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
+			config.capabilities.textDocument = vim.tbl_deep_extend("force", config.capabilities.textDocument or {}, {
+				foldingRange = { dynamicRegistration = false, lineFoldingOnly = true },
+			})
 			vim.lsp.config(server, config)
 		end
 

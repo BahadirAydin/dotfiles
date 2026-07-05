@@ -41,7 +41,7 @@ return {
 			{
 				"<leader>o",
 				"<cmd>Oil --float<CR>",
-				{ silent = true },
+				silent = true,
 				desc = "Open filesystem explorer in floating window",
 			},
 		},
@@ -107,7 +107,6 @@ return {
 			--              date_format = "%d-%m-%Y-%a",
 			-- 	time_format = "%M:%H",
 			-- },
-
 
 			finder = "fzf-lua",
 		},

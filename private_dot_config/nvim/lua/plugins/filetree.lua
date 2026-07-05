@@ -220,9 +220,9 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader>tt", "<cmd>Neotree filesystem toggle<CR>", { silent = true }, desc = "Toggle Neotree" },
-		{ "<leader>tb", "<cmd>Neotree buffers toggle<CR>", { silent = true }, desc = "Toggle Buffer Tree" },
-		{ "<leader>tg", "<cmd>Neotree git_status toggle<CR>", { silent = true }, desc = "Toggle Git Tree" },
-		{ "<leader>tf", "<cmd>Neotree focus<CR>", { silent = true }, desc = "Tree Focus" },
+		{ "<leader>tt", "<cmd>Neotree filesystem toggle<CR>", silent = true, desc = "Toggle Neotree" },
+		{ "<leader>tB", "<cmd>Neotree buffers toggle<CR>", silent = true, desc = "Toggle Buffer Tree" },
+		{ "<leader>tg", "<cmd>Neotree git_status toggle<CR>", silent = true, desc = "Toggle Git Tree" },
+		{ "<leader>tf", "<cmd>Neotree focus<CR>", silent = true, desc = "Tree Focus" },
 	},
 }
