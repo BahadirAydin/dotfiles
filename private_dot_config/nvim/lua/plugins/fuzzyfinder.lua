@@ -10,7 +10,6 @@ return {
 			{ "<leader>fh", "<cmd>Telescope command_history<cr>", desc = "Telescope Command History" },
 			{ "<leader>fa", "<cmd>Telescope aerial<cr>", desc = "Telescope Contexts" },
 			{ "<leader>fs", "<cmd>Telescope spell_suggest<cr>", desc = "Telescope Spell Suggest" },
-			{ "<leader>fy", "<cmd>Telescope neoclip<cr>", desc = "Telescope Spell Suggest" },
 			{
 				"<leader>fi",
 				function()
