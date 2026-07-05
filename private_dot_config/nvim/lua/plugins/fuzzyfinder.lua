@@ -48,9 +48,6 @@ return {
 					},
 				},
 				pickers = {
-					live_grep = {
-						layout_strategy = "vertical",
-					},
 					help_tags = {
 						layout_strategy = "vertical",
 					},
@@ -75,14 +72,6 @@ return {
 					oldfiles = {
 						layout_strategy = "vertical",
 						sort_lastused = true,
-					},
-				},
-				extensions = {
-					fzf = {
-						fuzzy = true, -- false will only do exact matching
-						override_generic_sorter = true, -- override the generic sorter
-						override_file_sorter = true, -- override the file sorter
-						case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 					},
 				},
 			})
