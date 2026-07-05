@@ -1,29 +1,39 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-	},
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
-		local null_ls = require("null-ls")
-		null_ls.setup({
-			sources = {
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.clang_format,
-				null_ls.builtins.formatting.gofmt,
-				null_ls.builtins.formatting.prettierd,
-				null_ls.builtins.formatting.gersemi,
-				null_ls.builtins.diagnostics.sqlfluff.with({
-					extra_args = { "--dialect", "postgres" },
-				}),
-				null_ls.builtins.formatting.sqlfluff.with({
-					extra_args = { "--dialect", "postgres" },
-				}),
+	{
+		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "black" },
+				c = { "clang_format" },
+				cpp = { "clang_format" },
+				objc = { "clang_format" },
+				objcpp = { "clang_format" },
+				go = { "gofmt" },
+				cmake = { "gersemi" },
+				sql = { "sqlfluff" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				svelte = { "prettierd" },
+				html = { "prettierd" },
+				css = { "prettierd" },
+				scss = { "prettierd" },
+				postcss = { "prettierd" },
+				mdx = { "prettierd" },
 			},
-		})
-	end,
-	keys = {
-		{ "<leader>ss", "<cmd>lua vim.lsp.buf.format({timeout_ms=4000})<CR>", desc = "Format file." },
+			formatters = {
+				sqlfluff = { append_args = { "--dialect", "postgres" } },
+			},
+		},
+		keys = {
+			{
+				"<leader>ss",
+				function()
+					require("conform").format({ lsp_format = "fallback" })
+				end,
+				desc = "Format file",
+			},
+		},
 	},
 }

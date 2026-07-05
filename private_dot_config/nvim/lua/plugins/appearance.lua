@@ -10,30 +10,6 @@ return {
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			exclude = {
-				filetypes = {
-					"help",
-					"markdown",
-					"text",
-					"dashboard",
-					"lazy",
-					"mason",
-					"checkhealth",
-					"man",
-					"lspinfo",
-					"TelescopePrompt",
-					"TelescopeResults",
-					"git",
-					"gitcommit",
-					"",
-				},
-			},
-		},
-	},
-	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
@@ -67,12 +43,7 @@ return {
 			},
 		},
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
 		},
 	},
 }

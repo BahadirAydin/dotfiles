@@ -36,6 +36,20 @@ return {
 				["g\\"] = { "actions.toggle_trash", mode = "n" },
 			},
 		},
+		config = function(_, opts)
+			require("oil").setup(opts)
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "OilActionsPost",
+				callback = function(event)
+					if event.data.actions[1].type == "move" then
+						require("snacks").rename.on_rename_file(
+							event.data.actions[1].src_url,
+							event.data.actions[1].dest_url
+						)
+					end
+				end,
+			})
+		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
@@ -121,9 +135,5 @@ return {
 				end
 			end, { noremap = false, expr = true })
 		end,
-	},
-	{
-		"folke/zen-mode.nvim",
-		opts = {},
 	},
 }

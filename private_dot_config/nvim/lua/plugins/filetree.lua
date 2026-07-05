@@ -79,6 +79,20 @@ return {
 			-- that will be available in all sources (if not overridden in `opts[source_name].commands`)
 			-- see `:h neo-tree-global-custom-commands`
 			commands = {},
+			event_handlers = {
+				{
+					event = "file_renamed",
+					handler = function(data)
+						require("snacks").rename.on_rename_file(data.source, data.destination)
+					end,
+				},
+				{
+					event = "file_moved",
+					handler = function(data)
+						require("snacks").rename.on_rename_file(data.source, data.destination)
+					end,
+				},
+			},
 			window = {
 				position = "right",
 				width = 36,
