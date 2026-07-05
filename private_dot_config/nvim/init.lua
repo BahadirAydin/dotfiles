@@ -19,8 +19,7 @@ vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.keymap.set("n", "C-l", "<cmd>noh<CR>", { silent = true, desc = "Clear search highlight." })
-vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Show code actions." })
+vim.keymap.set("n", "<C-l>", "<cmd>noh<CR>", { silent = true, desc = "Clear search highlight." })
 require("lazy").setup("plugins", {
 	change_detection = {
 		notify = false,
@@ -36,11 +35,6 @@ vim.opt.expandtab = true
 -- show line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-
--- folding
-vim.opt.foldmethod = "indent"
-vim.opt.foldenable = false
-vim.opt.foldlevel = 99
 
 -- set cursorline number and its highlight color
 vim.opt.cursorline = true
