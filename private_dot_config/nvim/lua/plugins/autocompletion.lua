@@ -16,10 +16,10 @@ return {
 				window = { border = "rounded" },
 			},
 			menu = { border = "rounded" },
-			signature = {
-				enabled = true,
-				window = { border = "rounded" },
-			},
+		},
+		signature = {
+			enabled = true,
+			window = { border = "rounded" },
 		},
 	},
 }
