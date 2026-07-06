@@ -1,5 +1,7 @@
 # .bahadiraydin
 
+![dashboard](assets/screenshots/dashboard.png)
+
 ## ⚙️ Dotfiles Managed with [chezmoi](https://www.chezmoi.io/)
 
 ### Prerequisites
