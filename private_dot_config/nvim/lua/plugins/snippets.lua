@@ -4,7 +4,12 @@ return {
 		version = "v2.*",
 		lazy = true,
 		event = "InsertEnter",
-		dependencies = { "rafamadriz/friendly-snippets", lazy = true },
+		build = function()
+			if vim.fn.executable("make") == 1 then
+				os.execute("make install_jsregexp")
+			end
+		end,
+		dependencies = { "rafamadriz/friendly-snippets" },
 		opts = {
 			region_check_events = "InsertEnter",
 			delete_check_events = "InsertLeave",
