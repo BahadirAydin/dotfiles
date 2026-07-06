@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.opt.termguicolors = true
-
+vim.opt.undofile = true 
 vim.opt.scrolloff = 10
 
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
