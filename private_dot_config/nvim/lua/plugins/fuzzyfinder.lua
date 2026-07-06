@@ -8,7 +8,6 @@ return {
 			{ "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Telescope Old Files" },
 			{ "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Telescope LSP Diagnostics" },
 			{ "<leader>fh", "<cmd>Telescope command_history<cr>", desc = "Telescope Command History" },
-			{ "<leader>fa", "<cmd>Telescope aerial<cr>", desc = "Telescope Contexts" },
 			{ "<leader>fs", "<cmd>Telescope spell_suggest<cr>", desc = "Telescope Spell Suggest" },
 			{
 				"<leader>fi",
@@ -20,7 +19,6 @@ return {
 		},
 		config = function()
 			local actions = require("telescope.actions")
-			require("telescope").load_extension("aerial")
 			require("telescope").setup({
 				defaults = {
 					file_ignore_patterns = { "node_modules/", "build/", "target/", "vendor/", "out/" },
