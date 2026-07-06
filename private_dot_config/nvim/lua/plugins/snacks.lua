@@ -11,10 +11,10 @@ return {
 					{
 						section = "terminal",
 						enabled = vim.fn.executable("chafa") == 1
-							and vim.fn.filereadable(vim.fn.expand("~/.config/colorful-valley.png")) == 1,
+							and vim.fn.filereadable(vim.fn.expand("~/.local/share/wallpapers/colorful-valley.png")) == 1,
 						cmd = {
 							"chafa",
-							vim.fn.expand("~/.config/colorful-valley.png"),
+							vim.fn.expand("~/.local/share/wallpapers/colorful-valley.png"),
 							"--format",
 							"symbols",
 							"--symbols",
