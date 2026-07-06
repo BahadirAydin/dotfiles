@@ -10,7 +10,7 @@ return {
 	},
 	{
 		"rebelot/kanagawa.nvim",
-		enabled = false,
+		cond = false,
 		name = "kanagawa",
 		lazy = false,
 		priority = 1000,
@@ -20,7 +20,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		cond = false,
 		name = "tokyonight",
 		lazy = false,
 		priority = 1000,
@@ -35,7 +35,7 @@ return {
 	},
 	{
 		"EdenEast/nightfox.nvim",
-		enabled = false,
+		cond = false,
 		priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme carbonfox]])
@@ -43,7 +43,7 @@ return {
 	},
 	{
 		"rose-pine/neovim",
-		enabled = false,
+		cond = false,
 		name = "rose-pine",
 		priority = 1000,
 		config = function()
@@ -52,7 +52,7 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		enabled = false,
+		cond = false,
 		name = "github-theme",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
