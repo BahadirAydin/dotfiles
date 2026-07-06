@@ -8,10 +8,31 @@ return {
 				enabled = true,
 				change_to_vcs_root = true,
 				sections = {
+					{
+						section = "terminal",
+						enabled = vim.fn.executable("chafa") == 1
+							and vim.fn.filereadable(vim.fn.expand("~/.config/colorful-valley.png")) == 1,
+						cmd = {
+							"chafa",
+							vim.fn.expand("~/.config/colorful-valley.png"),
+							"--format",
+							"symbols",
+							"--symbols",
+							"vhalf",
+							"--size",
+							"60x17",
+							"--stretch",
+						},
+						height = 16,
+						padding = 1,
+					},
 					{ section = "header" },
-					{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-					{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+					{
+						pane = 2,
+						{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+						{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+						{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+					},
 					{ section = "startup" },
 				},
 				preset = {
