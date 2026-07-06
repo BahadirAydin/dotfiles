@@ -85,6 +85,22 @@ return {
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find All Files" },
 			{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "Live Grep" },
 			{ "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "Resume Search" },
+			{
+				"<leader>fc",
+				function()
+					require("fzf-lua").git_commits({
+						actions = {
+							["default"] = function(selected)
+								local sha = selected[1]:match("^([0-9a-f]+)")
+								if sha then
+									vim.cmd("DiffviewOpen " .. sha .. "~.." .. sha)
+								end
+							end,
+						},
+					})
+				end,
+				desc = "Diffview: review commit",
+			},
 		},
 		opts = {
 			hls = {
