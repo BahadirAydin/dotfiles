@@ -17,10 +17,6 @@ local M = {
 					"-j",
 					"2",
 				},
-				root_dir = function()
-					local util = require("lspconfig.util")
-					return util.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
-				end,
 				capabilities = {
 					offsetEncoding = { "utf-8" },
 				},
