@@ -40,3 +40,6 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number" -- only highlight the number not the line
 vim.api.nvim_set_hl(0, "CursorLineNr", { foreground = "#89b4fa" })
+
+-- update time (default 4000)
+vim.opt.updatetime = 250
