@@ -91,10 +91,21 @@ return {
 			{ "<leader>dF", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file history", silent = true },
 			{ "<leader>dr", "<cmd>DiffviewRefresh<CR>", desc = "Diffview refresh", silent = true },
 			{ "<leader>do", "<cmd>DiffviewOpen origin/HEAD<CR>", desc = "Diffview vs origin/HEAD", silent = true },
-			{ "<leader>dO", "<cmd>DiffviewOpen origin/HEAD -- %<CR>", desc = "Diffview current file vs origin/HEAD", silent = true },
+			{
+				"<leader>dO",
+				"<cmd>DiffviewOpen origin/HEAD -- %<CR>",
+				desc = "Diffview current file vs origin/HEAD",
+				silent = true,
+			},
 			{ "<leader>dp", "<cmd>DiffviewOpen HEAD~1<CR>", desc = "Diffview vs HEAD~1", silent = true },
 			{ "<leader>dt", "<cmd>DiffviewToggleFiles<CR>", desc = "Diffview toggle files", silent = true },
-			{ "<leader>dh", "<esc><cmd>'<,'>DiffviewFileHistory<CR>", mode = "x", desc = "Diffview selection history", silent = true },
+			{
+				"<leader>dh",
+				"<esc><cmd>'<,'>DiffviewFileHistory<CR>",
+				mode = "x",
+				desc = "Diffview selection history",
+				silent = true,
+			},
 		},
 	},
 }

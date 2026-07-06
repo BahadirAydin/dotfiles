@@ -30,7 +30,7 @@ return {
 					preview = {
 						filesize_limit = 0.1, -- MB
 					},
-					vimgrep_arguments = {
+					vimgrep_arguments = vim.fn.executable("rg") == 1 and {
 						"rg",
 						"--color=never",
 						"--no-heading",
@@ -38,7 +38,7 @@ return {
 						"--line-number",
 						"--column",
 						"--smart-case",
-					},
+					} or nil,
 					layout_config = {
 						vertical = {
 							width = 0.8,
@@ -60,7 +60,8 @@ return {
 					},
 					find_files = {
 						layout_strategy = "vertical",
-						find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+						find_command = vim.fn.executable("rg") == 1 and { "rg", "--files", "--hidden", "-g", "!.git" }
+							or nil,
 					},
 					buffers = {
 						layout_strategy = "vertical",
