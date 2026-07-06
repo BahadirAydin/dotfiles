@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		lazy = false,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		keys = {
 			{ "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Telescope Buffers" },
