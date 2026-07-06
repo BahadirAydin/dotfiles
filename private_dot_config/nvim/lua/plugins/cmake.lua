@@ -2,6 +2,23 @@ return {
 	-- CMake integration
 	{
 		"Civitasv/cmake-tools.nvim",
+		cond = function()
+			local markers = { "CMakeLists.txt", "CMakePresets.json", "CMakeUserPresets.json" }
+			local dir = vim.fn.getcwd()
+			local home = vim.loop.os_homedir()
+			while dir and dir ~= "" do
+				for _, m in ipairs(markers) do
+					if vim.fn.filereadable(dir .. "/" .. m) == 1 then
+						return true
+					end
+				end
+				if dir == home then break end
+				local parent = vim.fn.fnamemodify(dir, ":h")
+				if parent == dir then break end
+				dir = parent
+			end
+			return false
+		end,
 		opts = {
 			cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
 			cmake_regenerate_on_save = true,
