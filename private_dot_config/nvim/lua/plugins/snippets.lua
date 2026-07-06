@@ -2,7 +2,9 @@ return {
 	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
-		dependencies = { "rafamadriz/friendly-snippets" },
+		lazy = true,
+		event = "InsertEnter",
+		dependencies = { "rafamadriz/friendly-snippets", lazy = true },
 		opts = {
 			region_check_events = "InsertEnter",
 			delete_check_events = "InsertLeave",
