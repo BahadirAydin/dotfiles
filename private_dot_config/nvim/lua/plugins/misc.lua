@@ -133,7 +133,7 @@ return {
 				else
 					return "gf"
 				end
-			end, { noremap = false, expr = true })
+			end, { noremap = false, expr = true, desc = "Obsidian follow link or fallback to gf" })
 		end,
 	},
 }

@@ -68,26 +68,28 @@ local M = {
 		vim.keymap.set("n", "]d", function()
 			vim.diagnostic.jump({ count = 1, float = true })
 		end, { desc = "Next diagnostic" })
-		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Diagnostic location list" })
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
 				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-				local opts = { buffer = ev.buf }
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-				vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-				vim.keymap.set("n", "<leader>wl", function()
+				local function map(lhs, rhs, desc)
+					vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
+				end
+				map("gD", vim.lsp.buf.declaration, "LSP declaration")
+				map("gd", vim.lsp.buf.definition, "LSP definition")
+				map("K", vim.lsp.buf.hover, "LSP hover")
+				map("gi", vim.lsp.buf.implementation, "LSP implementation")
+				map("<C-k>", vim.lsp.buf.signature_help, "LSP signature help")
+				map("<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace folder")
+				map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace folder")
+				map("<leader>wl", function()
 					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-				end, opts)
-				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+				end, "List workspace folders")
+				map("<leader>D", vim.lsp.buf.type_definition, "LSP type definition")
+				map("<leader>rn", vim.lsp.buf.rename, "LSP rename")
+				map("gr", vim.lsp.buf.references, "LSP references")
 			end,
 		})
 
