@@ -18,7 +18,6 @@ return {
 					header = vim.fn.executable("figlet") == 1 and vim.fn
 						.system({ "figlet", os.date("%A") })
 						:gsub("\n+$", "") or nil,
-					):gsub("\n+$", ""),
 					keys = {
 						{
 							icon = " ",
