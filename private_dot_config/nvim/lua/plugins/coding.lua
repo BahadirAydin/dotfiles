@@ -73,6 +73,20 @@ return {
 		"m4xshen/hardtime.nvim",
 		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = { disabled_filetypes = { "cmake_tools_terminal" } },
+		opts = {
+			disabled_filetypes = {
+				"cmake_tools_terminal",
+				"neo-tree",
+				"TelescopePrompt",
+				"snacks_picker_input",
+				"fzf-lua",
+				"oil",
+				"markdown",
+				"noice",
+				"help",
+				"lazy",
+				"mason",
+			},
+		},
 	},
 }
