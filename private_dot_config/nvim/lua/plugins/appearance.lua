@@ -1,11 +1,16 @@
 return {
 	{
 		"brenoprata10/nvim-highlight-colors",
+		event = "BufReadPost",
 		config = function()
 			require("nvim-highlight-colors").setup({
 				render = "background",
 				virtual_symbol = "■",
 				enable_tailwind = true,
+				enabled = function(bufnr)
+					local excluded = { c = true, cpp = true, cmake = true }
+					return not excluded[vim.bo[bufnr].filetype]
+				end,
 			})
 		end,
 	},
