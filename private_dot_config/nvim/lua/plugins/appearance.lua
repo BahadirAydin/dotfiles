@@ -14,12 +14,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
 			signs = true,
-			highlight = {
-				multiline = false,
-				keyword = "",
-				before = "",
-				after = "fg",
-			},
 		},
 	},
 	{
