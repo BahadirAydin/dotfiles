@@ -15,9 +15,9 @@ return {
 					{ section = "startup" },
 				},
 				preset = {
-					header = (
-						vim.fn.executable("figlet") == 1 and vim.fn.system({ "figlet", os.date("%A") })
-						or os.date("%A %d %B %Y")
+					header = vim.fn.executable("figlet") == 1 and vim.fn
+						.system({ "figlet", os.date("%A") })
+						:gsub("\n+$", "") or nil,
 					):gsub("\n+$", ""),
 					keys = {
 						{
