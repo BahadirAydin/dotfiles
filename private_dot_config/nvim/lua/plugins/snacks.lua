@@ -53,13 +53,13 @@ return {
 							icon = " ",
 							key = "g",
 							desc = "Find Text",
-							action = ":lua Snacks.dashboard.pick('live_grep')",
+							action = ":lua Snacks.picker.grep()",
 						},
 						{
 							icon = " ",
 							key = "r",
 							desc = "Recent Files",
-							action = ":lua Snacks.dashboard.pick('oldfiles')",
+							action = ":lua Snacks.picker.recent()",
 						},
 						{
 							icon = " ",

@@ -1,43 +1,94 @@
 return {
 	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons", optional = true },
-		cmd = { "FzfLua" },
+		"folke/snacks.nvim",
+		opts = {
+			picker = {
+				ui_select = true,
+				formatters = {
+					file = {
+						filename_first = true,
+					},
+				},
+			},
+		},
 		keys = {
-			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "FzfLua: Files" },
-			{ "<leader>fg", "<cmd>FzfLua live_grep<cr>", desc = "FzfLua: Live Grep" },
-			{ "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "FzfLua: Resume Search" },
-			{ "<leader>b", "<cmd>FzfLua buffers<cr>", desc = "FzfLua: Buffers" },
-			{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "FzfLua: Old Files" },
-			{ "<leader>fh", "<cmd>FzfLua command_history<cr>", desc = "FzfLua: Command History" },
-			{ "<leader>fs", "<cmd>FzfLua git_status<cr>", desc = "FzfLua: Git Status" },
-			{ "<leader>fd", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "FzfLua: Diagnostics Workspace" },
-			{ "<leader>fl", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "FzfLua: LSP Document Symbols" },
+			{
+				"<leader>ff",
+				function()
+					Snacks.picker.files()
+				end,
+				desc = "Snacks: Files",
+			},
+			{
+				"<leader>fg",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Snacks: Live Grep",
+			},
+			{
+				"<leader>fr",
+				function()
+					Snacks.picker.resume()
+				end,
+				desc = "Snacks: Resume Search",
+			},
+			{
+				"<leader>b",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "Snacks: Buffers",
+			},
+			{
+				"<leader>fo",
+				function()
+					Snacks.picker.recent()
+				end,
+				desc = "Snacks: Old Files",
+			},
+			{
+				"<leader>fh",
+				function()
+					Snacks.picker.command_history()
+				end,
+				desc = "Snacks: Command History",
+			},
+			{
+				"<leader>fs",
+				function()
+					Snacks.picker.git_status()
+				end,
+				desc = "Snacks: Git Status",
+			},
+			{
+				"<leader>fd",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Snacks: Diagnostics Workspace",
+			},
+			{
+				"<leader>fl",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "Snacks: LSP Document Symbols",
+			},
 			{
 				"<leader>fc",
 				function()
-					require("fzf-lua").git_commits({
-						actions = {
-							["default"] = function(selected)
-								local sha = selected[1]:match("^([0-9a-f]+)")
-								if sha then
-									vim.cmd("DiffviewOpen " .. sha .. "~.." .. sha)
-								end
-							end,
-						},
+					Snacks.picker.git_log({
+						confirm = function(picker, item)
+							picker:close()
+							if item and item.commit then
+								local sha = item.commit
+								vim.cmd("DiffviewOpen " .. sha .. "~.." .. sha)
+							end
+						end,
 					})
 				end,
 				desc = "Diffview: review commit",
-			},
-		},
-		opts = {
-			oldfiles = {
-				include_current_session = true,
-			},
-			previewers = {
-				builtin = {
-					syntax_limit_b = 1024 * 100, -- 100KB
-				},
 			},
 		},
 	},

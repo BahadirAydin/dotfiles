@@ -77,7 +77,7 @@ return {
 		},
 		opts = {
 			picker = {
-				name = "fzf-lua",
+				name = "snacks.nvim",
 			},
 			legacy_commands = false,
 			workspaces = {
@@ -124,7 +124,7 @@ return {
 			-- 	time_format = "%M:%H",
 			-- },
 
-			finder = "fzf-lua",
+			finder = "snacks.nvim",
 		},
 		config = function(_, opts)
 			-- vim.opt.conceallevel = 1
