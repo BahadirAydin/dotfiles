@@ -13,6 +13,20 @@ return {
 		},
 		keys = {
 			{
+				"<leader><space>",
+				function()
+					Snacks.picker.smart()
+				end,
+				desc = "Snacks: Smart Find",
+			},
+			{
+				"<leader>fp",
+				function()
+					Snacks.picker.projects()
+				end,
+				desc = "Snacks: Projects",
+			},
+			{
 				"<leader>ff",
 				function()
 					Snacks.picker.files()
@@ -88,7 +102,29 @@ return {
 						end,
 					})
 				end,
-				desc = "Diffview: review commit",
+				desc = "Snacks: Commit with Diffview",
+			},
+			{
+				"<leader>ft",
+				function()
+					Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME", "BUG" } })
+				end,
+				desc = "Snacks: Todo Comments",
+			},
+			{
+				"<leader>fw",
+				function()
+					Snacks.picker.grep_word()
+				end,
+				mode = { "n", "x" },
+				desc = "Snacks: Grep Word",
+			},
+			{
+				"<leader>fk",
+				function()
+					Snacks.picker.keymaps()
+				end,
+				desc = "Snacks: Keymaps",
 			},
 		},
 	},
