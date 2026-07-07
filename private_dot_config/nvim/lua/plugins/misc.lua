@@ -69,7 +69,6 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"saghen/blink.cmp",
-			"nvim-telescope/telescope.nvim",
 		},
 		keys = {
 			{ "<leader>no", "<cmd>Obsidian open<cr>", desc = "Obsidian Open" },
@@ -77,6 +76,9 @@ return {
 			{ "<leader>nt", "<cmd>Obsidian today<cr>", desc = "Obsidian Today" },
 		},
 		opts = {
+			picker = {
+				name = "fzf-lua",
+			},
 			legacy_commands = false,
 			workspaces = {
 				{
