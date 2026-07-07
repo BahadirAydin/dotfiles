@@ -84,7 +84,7 @@ return {
 				-- lualine_z = {}
 				-- },
 				-- inactive_winbar = {},
-				extensions = { "oil", "neo-tree", "toggleterm", "trouble" },
+				extensions = { "oil", "trouble" },
 			})
 		end,
 	},
