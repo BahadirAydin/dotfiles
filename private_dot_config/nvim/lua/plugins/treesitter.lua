@@ -53,7 +53,6 @@ return {
 			})
 			vim.o.foldlevelstart = 99
 			vim.o.foldenable = true
-			vim.o.foldcolumn = "1"
 			vim.api.nvim_create_autocmd("FileType", {
 				group = vim.api.nvim_create_augroup("UserTreesitter", {}),
 				callback = function()

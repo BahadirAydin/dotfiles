@@ -41,6 +41,10 @@ return {
 			gitbrowse = { enabled = true },
 			-- Replaces nvim-notify; noice routes its notifications here automatically
 			notifier = { enabled = true, timeout = 3000 },
+			-- Status column with git signs (gitsigns), folds, and marks
+			statuscolumn = { enabled = true },
+			-- Better vim.ui.input (float with border, <Esc> cancels, <CR> confirms)
+			input = { enabled = true },
 		},
 		keys = {
 			{
