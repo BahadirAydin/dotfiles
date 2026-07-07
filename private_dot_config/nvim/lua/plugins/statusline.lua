@@ -4,9 +4,7 @@ return {
 		lazy = false,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-			"SmiteshP/nvim-navic",
 		},
-
 		config = function()
 			require("lualine").setup({
 				options = {
@@ -21,7 +19,7 @@ return {
 					},
 					ignore_focus = {},
 					always_divide_middle = true,
-					globalstatus = false,
+					globalstatus = true,
 					refresh = {
 						statusline = 1000,
 						tabline = 1000,
@@ -67,23 +65,6 @@ return {
 					lualine_y = {},
 					lualine_z = {},
 				},
-				-- tabline = {
-				-- 	lualine_a = { "buffers" },
-				-- 	lualine_b = { "branch" },
-				-- 	lualine_c = {},
-				-- 	lualine_x = {},
-				-- 	lualine_y = {},
-				-- 	lualine_z = { "tabs" },
-				-- },
-				-- winbar = {
-				-- lualine_a = {'buffers'},
-				-- lualine_b = {},
-				-- lualine_c = {},
-				-- lualine_x = {},
-				-- lualine_y = {},
-				-- lualine_z = {}
-				-- },
-				-- inactive_winbar = {},
 				extensions = { "oil", "trouble" },
 			})
 		end,
