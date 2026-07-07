@@ -1,3 +1,26 @@
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#fab388"
+      - "bold"
+    cherryPickedCommitBgColor:
+      - "#f2cdce"
+    cherryPickedCommitFgColor:
+      - "#89b4fb"
+    defaultFgColor:
+      - "#cdd6f5"
+    inactiveBorderColor:
+      - "#89b4fb"
+    optionsTextColor:
+      - "#89b4fb"
+    searchingActiveBorderColor:
+      - "#fab388"
+      - "bold"
+    selectedLineBgColor:
+      - "#45475b"
+    unstagedChangesColor:
+      - "#f38ba9"
 git:
   pagers:
     - colorArg: always
@@ -17,29 +40,27 @@ customCommands:
         title: "Type of change"
         options:
           - name: "✨ feat - A new feature"
-            value: "✨ feat"
-          - name: "\U0001F41B fix - A bug fix"
-            value: "\U0001F41B fix"
-          - name: "\U0001F4DD docs - Documentation only changes"
-            value: "\U0001F4DD docs"
-          - name: "\U0001F3A8 style - Code style changes (formatting, etc)"
-            value: "\U0001F3A8 style"
+            value: "feat"
+          - name: "🐛 fix - A bug fix"
+            value: "fix"
+          - name: "📝 docs - Documentation only changes"
+            value: "docs"
+          - name: "🎨 style - Code style changes (formatting, etc)"
+            value: "style"
           - name: "♻️ refactor - Code change that neither fixes a bug nor adds a feature"
-            value: "♻️ refactor"
-          - name: "\U0001F680 perf - A code change that improves performance"
-            value: "\U0001F680 perf"
+            value: "refactor"
+          - name: "🚀 perf - A code change that improves performance"
+            value: "perf"
           - name: "✅ test - Adding missing tests or correcting existing tests"
-            value: "✅ test"
-          - name: "\U0001F527 chore - Changes to the build process or auxiliary tools"
-            value: "\U0001F527 chore"
-          - name: "\U0001F477 ci - Changes to CI configuration files and scripts"
-            value: "\U0001F477 ci"
-          - name: "\U0001F4E6 build - Changes that affect the build system or dependencies"
-            value: "\U0001F4E6 build"
+            value: "test"
+          - name: "🔧 chore - Changes to the build process or auxiliary tools"
+            value: "chore"
+          - name: "👷 ci - Changes to CI configuration files and scripts"
+            value: "ci"
+          - name: "📦 build - Changes that affect the build system or dependencies"
+            value: "build"
           - name: "⏪ revert - Reverts a previous commit"
-            value: "⏪ revert"
-          - name: "\U0001F516 release - Release a new tag."
-            value: "\U0001F516 release"
+            value: "revert"
       - type: "input"
         title: "Scope"
         key: "Scope"
@@ -65,3 +86,8 @@ customCommands:
         title: "Commit"
         body: "Are you sure you want to commit?"
     loadingText: "Creating commit..."
+  - key: "G"
+    command: "glab mr view -w {{.SelectedLocalBranch.UpstreamBranch}}"
+    context: "localBranches"
+    description: "Go to MR in gitlab"
+    stream: true
