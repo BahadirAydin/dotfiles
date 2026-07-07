@@ -59,7 +59,7 @@ local M = {
 		vim.keymap.set(
 			"n",
 			"<leader><tab>",
-			"<cmd>lua vim.diagnostic.open_float(nil,{focus=false})<CR>",
+			"<cmd>lua vim.diagnostic.open_float(nil,{focus=false, border='single'})<CR>",
 			{ silent = true, desc = "Floating diagnostics window." }
 		)
 		vim.keymap.set("n", "[d", function()
