@@ -6,8 +6,7 @@ SETUVAR EDITOR:nvim3232
 SETUVAR --export --path GOPATH:/home/bahadir/\x2elocal/share/go
 SETUVAR --export JAVA_HOME:/usr/lib/jvm/java\x2d17\x2dopenjdk
 SETUVAR --export LS_COLORS:di\x3d00\x3b33\x3aow\x3d01\x3b31
-SETUVAR --export --path PATH:/usr/lib/jvm/java\x2d17\x2dopenjdk/bin\x1e/home/bahadir/\x2epyenv/bin\x1e/bin\x1e/home/bahadir/go/bin\x1e/home/bahadir/\x2elocal/bin\x1e/home/bahadir/\x2ecargo/bin\x1e/usr/bin\x1e/usr/local/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/home/bahadir/\x2epyenv/shims\x1e/home/bahadir/\x2epyenv/plugins/pyenv\x2dvirtualenv/shims\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/opt/android\x2dsdk/tools
-SETUVAR --export PYENV_ROOT:/home/bahadir/\x2epyenv
+SETUVAR --export --path PATH:/usr/lib/jvm/java\x2d17\x2dopenjdk/bin\x1e/bin\x1e/home/bahadir/go/bin\x1e/home/bahadir/\x2elocal/bin\x1e/home/bahadir/\x2ecargo/bin\x1e/usr/bin\x1e/usr/local/bin\x1e/usr/local/sbin\x1e/usr/sbin\x1e/usr/lib/jvm/default/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/opt/android\x2dsdk/tools
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR --export XDG_CACHE_HOME:/home/bahadir/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/home/bahadir/\x2econfig
@@ -19,4 +18,4 @@ SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_f
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_user_paths:/home/bahadir/\x2elocal/share/go/bin\x1e/home/bahadir/Android/Sdk/tools/bin\x1e/home/bahadir/Android/Sdk/tools\x1e/home/bahadir/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/bahadir/Android/Sdk/emulator\x1e/home/bahadir/Android/Sdk/platform\x2dtools\x1e/usr/lib/flutter/bin\x1e/opt/android\x2dsdk/emulator\x1e/home/bahadir/\x2epub\x2dcache/bin\x1e/opt/android\x2dsdk/platform\x2dtools\x1e/opt/android\x2dsdk/cmdline\x2dtools/latest/bin\x1e/usr/lib/jvm/java\x2d17\x2dopenjdk/bin\x1e/home/bahadir/\x2epyenv/bin\x1e/bin\x1e/home/bahadir/go/bin\x1e/home/bahadir/\x2elocal/bin\x1e/home/bahadir/\x2ecargo/bin\x1e/usr/bin\x1e/usr/local/bin\x1e/usr/local/sbin\x1e/usr/sbin
+SETUVAR fish_user_paths:/home/bahadir/\x2elocal/share/go/bin\x1e/home/bahadir/Android/Sdk/tools/bin\x1e/home/bahadir/Android/Sdk/tools\x1e/home/bahadir/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/bahadir/Android/Sdk/emulator\x1e/home/bahadir/Android/Sdk/platform\x2dtools\x1e/usr/lib/flutter/bin\x1e/opt/android\x2dsdk/emulator\x1e/home/bahadir/\x2epub\x2dcache/bin\x1e/opt/android\x2dsdk/platform\x2dtools\x1e/opt/android\x2dsdk/cmdline\x2dtools/latest/bin\x1e/usr/lib/jvm/java\x2d17\x2dopenjdk/bin\x1e/bin\x1e/home/bahadir/go/bin\x1e/home/bahadir/\x2elocal/bin\x1e/home/bahadir/\x2ecargo/bin\x1e/usr/bin\x1e/usr/local/bin\x1e/usr/local/sbin\x1e/usr/sbin

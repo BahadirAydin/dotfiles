@@ -98,7 +98,7 @@
     "format": "{}",
     "tooltip": true,
     "interval": 600,
-    "exec": "~/.pyenv/versions/3.11.5/bin/python3.11 $HOME/.config/waybar/modules/weather.py",
+    "exec": "$HOME/.config/waybar/modules/weather.py",
     "on-click": "firefox https://wttr.in/Ankara",
     "return-type": "json",
   },
