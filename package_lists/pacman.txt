@@ -154,6 +154,7 @@ shotwell
 slurp
 spotify-launcher
 sqlfluff
+starship
 sudo
 syncthing
 tauon-music-box

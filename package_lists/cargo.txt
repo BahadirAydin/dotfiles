@@ -9,7 +9,6 @@ git-graph
 jless
 lsd
 sqlx-cli
-starship
 stylua
 tree-sitter-cli
 uv
