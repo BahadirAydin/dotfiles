@@ -62,6 +62,7 @@ return {
 				"cmake_tools_terminal",
 				"neo-tree",
 				"TelescopePrompt",
+				"snacks_input",
 				"snacks_picker_input",
 				"fzf-lua",
 				"oil",
