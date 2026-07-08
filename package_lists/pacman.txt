@@ -22,7 +22,6 @@ chezmoi
 clang
 cmake
 copyq
-cowsay
 cpio
 csvlens
 debian-archive-keyring
@@ -194,4 +193,3 @@ zathura-pdf-mupdf
 zellij
 zip
 zoxide
-zsh
