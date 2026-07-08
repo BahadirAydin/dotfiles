@@ -29,7 +29,7 @@ git:
     args: "--no-ff"
 customCommands:
   - command: >
-      git commit  -m '{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}{{.Form.Breaking}}: {{.Form.Message}}'  {{if .Form.Description}}-m '{{.Form.Description}}'{{end}}
+      {{ $scope := "" }}{{ if .Form.Scope }}{{ $scope = printf "(%s)" .Form.Scope }}{{ end }}git commit -m {{ printf "%s%s%s: %s" .Form.Type $scope .Form.Breaking .Form.Message | quote }}{{ if .Form.Description }} -m {{ .Form.Description | quote }}{{ end }}
 
     context: files
     description: "Create new conventional commit with emoji and optional description"
