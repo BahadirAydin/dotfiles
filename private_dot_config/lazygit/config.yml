@@ -32,7 +32,7 @@ customCommands:
       {{ $scope := "" }}{{ if .Form.Scope }}{{ $scope = printf "(%s)" .Form.Scope }}{{ end }}git commit -m {{ printf "%s%s%s: %s" .Form.Type $scope .Form.Breaking .Form.Message | quote }}{{ if .Form.Description }} -m {{ .Form.Description | quote }}{{ end }}
 
     context: files
-    description: "Create new conventional commit with emoji and optional description"
+    description: "Create conventional commit (scope/breaking/description optional)"
     key: C
     prompts:
       - type: "menu"
@@ -41,26 +41,37 @@ customCommands:
         options:
           - name: "✨ feat - A new feature"
             value: "feat"
+            key: f
           - name: "🐛 fix - A bug fix"
             value: "fix"
+            key: x
           - name: "📝 docs - Documentation only changes"
             value: "docs"
+            key: d
           - name: "🎨 style - Code style changes (formatting, etc)"
             value: "style"
+            key: s
           - name: "♻️ refactor - Code change that neither fixes a bug nor adds a feature"
             value: "refactor"
+            key: r
           - name: "🚀 perf - A code change that improves performance"
             value: "perf"
+            key: p
           - name: "✅ test - Adding missing tests or correcting existing tests"
             value: "test"
+            key: t
           - name: "🔧 chore - Changes to the build process or auxiliary tools"
             value: "chore"
+            key: c
           - name: "👷 ci - Changes to CI configuration files and scripts"
             value: "ci"
+            key: i
           - name: "📦 build - Changes that affect the build system or dependencies"
             value: "build"
+            key: b
           - name: "⏪ revert - Reverts a previous commit"
             value: "revert"
+            key: v
       - type: "input"
         title: "Scope"
         key: "Scope"
@@ -87,7 +98,7 @@ customCommands:
         body: "Are you sure you want to commit?"
     loadingText: "Creating commit..."
   - key: "G"
-    command: "glab mr view -w {{.SelectedLocalBranch.UpstreamBranch}}"
+    command: "glab mr view -w {{ if .SelectedLocalBranch.UpstreamBranch }}{{ .SelectedLocalBranch.UpstreamBranch | quote }}{{ end }}"
     context: "localBranches"
     description: "Go to MR in gitlab"
-    output: terminal
+    loadingText: "Opening MR in browser..."
