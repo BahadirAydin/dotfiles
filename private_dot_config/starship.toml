@@ -1,21 +1,12 @@
 format = """
 $username\
 $hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
 $directory\
-$vcsh\
-$fossil_branch\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
-$hg_branch\
 $git_status\
-$pijul_channel\
-$docker_context\
 $package\
 $c\
 $cmake\
@@ -33,12 +24,7 @@ $python\
 $rust\
 $scala\
 $zig\
-$conda\
 $meson\
-$memory_usage\
-$aws\
-$gcloud\
-$azure\
 $env_var\
 $custom\
 $sudo\
@@ -63,14 +49,8 @@ vimcmd_replace_symbol = "[R](#e69138)"
 vimcmd_visual_symbol = "[V](#c27ba0)"
 
 [cmd_duration]
-# min_time = 2_000
 min_time = 2_000
 format = '󰣇 [$duration](bold yellow)'
-# show_notifications = true
-# min_time_to_notify = 10_000
-
-[aws]
-symbol = "  "
 
 [battery]
 format = '[$symbol$percentage]($style) '
@@ -79,49 +59,87 @@ charging_symbol = '󰂄 '
 discharging_symbol = '󰂃 '
 empty_symbol = '󰂎 '
 
-[[battery.display]]
-threshold = 10
-style = 'bold red'
+[buf]
+symbol = " "
 
-[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
-threshold = 30
-style = 'bold yellow'
-discharging_symbol = '   '
+[bun]
+symbol = " "
 
 [c]
 symbol = " "
 
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[cobol]
+symbol = " "
+
 [conda]
-symbol = " "
+symbol = " "
+
+[container]
+symbol = " "
+
+[crystal]
+symbol = " "
 
 [dart]
-symbol = " "
+symbol = " "
+
+[deno]
+symbol = " "
+
+[direnv]
+symbol = " "
 
 [directory]
-read_only = " "
-style = '#f0b6fb'
+# style = '#9ccfd8' # can be used to set specific colors
+read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
 
+[dotnet]
+symbol = " "
+
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
 
+[erlang]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fortran]
+symbol = " "
+
 [fossil_branch]
 symbol = " "
 
+[gcloud]
+symbol = "󱇶 "
+
+[gleam]
+symbol = " "
+
 [git_branch]
 symbol = " "
-style = "#ADBDFF"
 
-[git_status]
-# style = "#D24F37"
+[git_commit]
+tag_symbol = '  '
 
 [golang]
 symbol = " "
+
+[gradle]
+symbol = " "
 
 [guix_shell]
 symbol = " "
@@ -130,7 +148,10 @@ symbol = " "
 symbol = " "
 
 [haxe]
-symbol = "⌘ "
+symbol = " "
+
+[helm]
+symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -139,46 +160,196 @@ symbol = " "
 ssh_symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
 symbol = " "
 
+[kotlin]
+symbol = " "
+
+[kubernetes]
+symbol = "󱃾 "
+
 [lua]
 symbol = " "
+
+[maven]
+symbol = " "
 
 [memory_usage]
 symbol = "󰍛 "
 
+[meson]
+symbol = "󰔷 "
+
+[mojo]
+symbol = "󰈸 "
+
+[nats]
+symbol = " "
+
+[netns]
+symbol = "󰛳 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
 [nodejs]
 symbol = " "
 
+[ocaml]
+symbol = " "
+
+[odin]
+symbol = "󰟢 "
+
+[opa]
+symbol = " "
+
+[openstack]
+symbol = " "
+
 [os.symbols]
+AIX = " "
+AlmaLinux = " "
+Alpaquita = " "
+Alpine = " "
+ALTLinux = " "
 Amazon = " "
 Android = " "
+AOSC = " "
 Arch = " "
+Artix = " "
+Bluefin = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
 Fedora = " "
+FreeBSD = " "
+Garuda = " "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = " "
+InstantOS = " "
+Ios = "󰀷 "
+Kali = " "
 Linux = " "
+Mabox = " "
 Macos = " "
 Manjaro = " "
-Redhat = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = " "
+OpenCloudOS = " "
+openEuler = " "
+openSUSE = " "
+OracleLinux = "󰺡 "
+PikaOS = " "
+Pop = " "
+Raspbian = " "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Redox = "󰀘 "
+RockyLinux = " "
+Solus = " "
+SUSE = " "
 Ubuntu = " "
+Ultramarine = " "
 Unknown = " "
-Windows = " "
+Uos = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
 
 [package]
-symbol = " "
-format = '[$symbol$version]($style) '
-version_format = 'v${major}.${minor}'
-style = '#b27c7c'
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[pulumi]
+symbol = " "
+
+[purescript]
+symbol = " "
 
 [python]
-symbol = "🐍 "
-version_format = 'v${major}.${minor}'
+symbol = " "
 
+[raku]
+symbol = "󱖊 "
+
+[red]
+symbol = "󱍼 "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
 
 [rust]
-symbol = "🦀 "
-version_format = 'v${major}.${minor}'
-style = "#FF9B50"
+symbol = "󱘗 "
 
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = "󰹍 "
+
+[singularity]
+symbol = " "
+
+[solidity]
+symbol = " "
+
+[spack]
+symbol = " "
+
+[status]
+symbol = " "
+
+[sudo]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[terraform]
+symbol = " "
+
+[vlang]
+symbol = " "
+
+[typst]
+symbol = " "
+
+[vagrant]
+symbol = " "
+
+[xmake]
+symbol = " "
+
+[zig]
+symbol = " "
