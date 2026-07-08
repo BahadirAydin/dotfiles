@@ -5,7 +5,6 @@ cargo-llvm-cov
 cargo-nextest
 cargo-release
 du-dust
-git-graph
 jless
 lsd
 sqlx-cli
