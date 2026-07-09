@@ -68,7 +68,6 @@ return {
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"saghen/blink.cmp",
 		},
 		keys = {
 			{ "<leader>no", "<cmd>Obsidian open<cr>", desc = "Obsidian Open" },
@@ -86,7 +85,6 @@ return {
 					path = "~/BahadirAydin/Notes",
 				},
 			},
-			dir = "~/BahadirAydin/Notes",
 			daily_notes = {
 				folder = "Günlük",
 				date_format = "%Y-%m-%d",
