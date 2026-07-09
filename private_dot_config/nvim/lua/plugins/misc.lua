@@ -77,7 +77,7 @@ return {
 		},
 		opts = {
 			picker = {
-				name = "snacks.nvim",
+				name = "snacks.picker",
 			},
 			legacy_commands = false,
 			workspaces = {
