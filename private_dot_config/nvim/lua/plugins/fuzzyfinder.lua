@@ -90,6 +90,13 @@ return {
 				desc = "Snacks: LSP Document Symbols",
 			},
 			{
+				"<leader>fL",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "Snacks: LSP Workspace Symbols",
+			},
+			{
 				"<leader>fc",
 				function()
 					Snacks.picker.git_log({
