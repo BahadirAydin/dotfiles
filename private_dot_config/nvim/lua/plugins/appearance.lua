@@ -45,15 +45,6 @@ return {
 					throttle = 1000 / 10,
 				},
 				hover = { silent = true },
-				signature = {
-					enabled = true,
-					auto_open = {
-						enabled = true,
-						trigger = true,
-						luasnip = true,
-						throttle = 50,
-					},
-				},
 			},
 		},
 		dependencies = {
