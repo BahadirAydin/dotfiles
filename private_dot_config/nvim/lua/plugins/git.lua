@@ -62,10 +62,10 @@ return {
 					end, { desc = "Git: quickfix all hunks" })
 					map("n", "<leader>hq", gitsigns.setqflist, { desc = "Git: quickfix hunks" })
 
-					-- Toggles
-					map("n", "<leader>tb", gitsigns.toggle_current_line_blame, { desc = "Git: toggle line blame" })
-					map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git: toggle deleted" })
-					map("n", "<leader>tw", gitsigns.toggle_word_diff, { desc = "Git: toggle word diff" })
+					-- Toggles. Under <leader>ht so that <leader>t belongs to neotest.
+					map("n", "<leader>htb", gitsigns.toggle_current_line_blame, { desc = "Git: toggle line blame" })
+					map("n", "<leader>htd", gitsigns.toggle_deleted, { desc = "Git: toggle deleted" })
+					map("n", "<leader>htw", gitsigns.toggle_word_diff, { desc = "Git: toggle word diff" })
 
 					-- Text object
 					map({ "o", "x" }, "ih", gitsigns.select_hunk, { desc = "Git: select hunk" })
