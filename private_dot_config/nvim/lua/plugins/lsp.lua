@@ -14,8 +14,6 @@ local M = {
 					"--background-index-priority=background",
 					"--completion-style=detailed",
 					"--header-insertion=iwyu",
-					"-j",
-					"2",
 				},
 				capabilities = {
 					offsetEncoding = { "utf-8" },
@@ -28,6 +26,9 @@ local M = {
 			},
 			cmake = {},
 			basedpyright = {},
+			ruff = {},
+			jsonls = {},
+			yamlls = {},
 			marksman = {
 				filetypes = { "markdown", "mdx" },
 			},
@@ -52,9 +53,10 @@ local M = {
 		},
 	},
 	config = function(_, opts)
-		-- vim.diagnostic.config({
-		-- 	virtual_text = false,
-		-- })
+		vim.diagnostic.config({
+			virtual_lines = false,
+			severity_sort = true,
+		})
 
 		vim.keymap.set(
 			"n",
