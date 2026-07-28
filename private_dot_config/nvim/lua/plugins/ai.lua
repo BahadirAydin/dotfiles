@@ -5,7 +5,7 @@ return {
 		cli = {
 			mux = {
 				backend = "zellij",
-				enabled = true,
+				enabled = vim.fn.executable("zellij") == 1,
 			},
 		},
 	},
