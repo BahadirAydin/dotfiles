@@ -62,6 +62,7 @@ return {
 				-- Matched as lua patterns, so the dash has to be escaped. Covers
 				-- dap-view, -term, -help and -hover in one entry.
 				"dap%-view.*",
+				"neotest%-output.*",
 				"cmake_tools_terminal",
 				"neo-tree",
 				"TelescopePrompt",
