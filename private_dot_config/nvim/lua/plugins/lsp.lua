@@ -79,19 +79,13 @@ local M = {
 				local function map(lhs, rhs, desc)
 					vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
 				end
-				map("gD", vim.lsp.buf.declaration, "LSP declaration")
-				map("gd", vim.lsp.buf.definition, "LSP definition")
-				map("K", vim.lsp.buf.hover, "LSP hover")
-				map("gi", vim.lsp.buf.implementation, "LSP implementation")
-				map("<C-k>", vim.lsp.buf.signature_help, "LSP signature help")
-				map("<leader>wa", vim.lsp.buf.add_workspace_folder, "Add workspace folder")
-				map("<leader>wr", vim.lsp.buf.remove_workspace_folder, "Remove workspace folder")
-				map("<leader>wl", function()
-					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-				end, "List workspace folders")
-				map("<leader>D", vim.lsp.buf.type_definition, "LSP type definition")
-				map("<leader>rn", vim.lsp.buf.rename, "LSP rename")
-				map("gr", vim.lsp.buf.references, "LSP references")
+				-- Everything else (rename, references, implementation, type
+				-- definition, hover, signature help, codelens) is a Neovim 0.11
+				-- built-in under `gr`, `K` and `<C-s>`. Only definition and
+				-- declaration have no built-in, so they are all that is left here.
+				-- which-key labels the built-ins, see misc.lua.
+				map("gd", vim.lsp.buf.definition, "Definition")
+				map("gD", vim.lsp.buf.declaration, "Declaration")
 			end,
 		})
 
