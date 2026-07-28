@@ -9,6 +9,7 @@ return {
 				{ "<leader>f", group = "Find" },
 				{ "<leader>h", group = "Git hunks" },
 				{ "<leader>ht", group = "Hunk toggles" },
+				{ "<leader>t", group = "Test" },
 				{ "<leader>u", group = "Debug" },
 				{ "<leader>x", group = "Trouble" },
 				-- `vim.lsp.buf.*()` descriptions so `gr` reads as a menu.
