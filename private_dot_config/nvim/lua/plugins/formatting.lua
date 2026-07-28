@@ -5,7 +5,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "black" },
+				python = { "ruff_organize_imports", "ruff_format" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 				objc = { "clang_format" },
