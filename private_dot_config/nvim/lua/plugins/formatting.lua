@@ -25,7 +25,9 @@ return {
 			formatters = {
 				sqlfluff = { append_args = { "--dialect", "postgres" } },
 			},
-			format_on_save = {},
+			format_on_save = {
+				lsp_format = "fallback",
+			},
 		},
 		keys = {
 			{
