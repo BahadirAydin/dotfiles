@@ -22,7 +22,17 @@ return {
 		"aznhe21/actions-preview.nvim",
 		opts = {},
 		keys = {
-			{ "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr>", desc = "Code Actions Preview" },
+			-- Deliberately shadows the built-in `gra` rather than adding a third
+			-- key. Visual mode matters: clangd's extract function / extract
+			-- variable only appear for a selected range.
+			{
+				"gra",
+				function()
+					require("actions-preview").code_actions()
+				end,
+				mode = { "n", "x" },
+				desc = "Code action (preview)",
+			},
 		},
 	},
 	{
