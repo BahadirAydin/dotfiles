@@ -2,6 +2,18 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
+		opts = {
+			spec = {
+				{ "<leader>c", group = "CMake" },
+				{ "<leader>d", group = "Diffview" },
+				{ "<leader>f", group = "Find" },
+				{ "<leader>h", group = "Git hunks" },
+				{ "<leader>t", group = "Toggles" },
+				{ "<leader>u", group = "Debug" },
+				{ "<leader>w", group = "LSP workspace" },
+				{ "<leader>x", group = "Trouble" },
+			},
+		},
 		keys = {
 			{
 				"<leader>?",
