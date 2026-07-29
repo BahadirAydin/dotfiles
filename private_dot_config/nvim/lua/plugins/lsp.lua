@@ -70,7 +70,10 @@ local M = {
 		vim.keymap.set("n", "]d", function()
 			vim.diagnostic.jump({ count = 1, float = true })
 		end, { desc = "Next diagnostic" })
-		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Diagnostic location list" })
+		vim.keymap.set("n", "<space>q", function()
+			vim.diagnostic.setloclist({ open = false })
+			require("trouble").open({ mode = "loclist", focus = true })
+		end, { desc = "Diagnostic location list (Trouble)" })
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
