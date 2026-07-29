@@ -38,6 +38,41 @@ local function generate_options()
 	return options
 end
 
+-- cmake-tools drives its own progress spinner, but its notification module is
+-- hard-wired to `require("notify")` (rcarriga/nvim-notify), which this config
+-- replaced with snacks.notifier. That require fails, every cmake-tools
+-- notification is silently dropped, this fixes the issue
+local function notify(msg, level, opts)
+	Snacks.notifier.notify(msg, level, vim.tbl_extend("keep", opts, { id = "cmake-build", title = "CMake" }))
+end
+
+local function build()
+	-- A function `opts` is re-evaluated on every render pass, and the frame of
+	-- `Snacks.util.spinner()` comes from the clock, so this animates without a
+	-- timer of its own.
+	notify("Building…", "info", {
+		timeout = false,
+		opts = function(n)
+			n.icon = Snacks.util.spinner()
+		end,
+	})
+
+	-- Every early return in cmake.build() still invokes the callback, including
+	-- a cancelled target/preset picker, so the spinner always gets replaced.
+	require("cmake-tools").build({}, function(result)
+		-- The executor pops the native quickfix window on failure before it
+		-- reaches here, so close it either way.
+		vim.cmd.cclose()
+		if result:is_ok() then
+			notify("Build succeeded", "info", { icon = "", timeout = 1000 })
+			require("trouble").close("qflist")
+		else
+			notify("Build failed", "error", { icon = "", timeout = 1000 })
+			require("trouble").open({ mode = "qflist", focus = true })
+		end
+	end)
+end
+
 return {
 	-- CMake integration
 	{
@@ -49,14 +84,13 @@ return {
 			cmake_generate_options = generate_options(),
 			cmake_regenerate_on_save = true,
 			cmake_use_preset = true,
+			cmake_executor = {
+				name = "quickfix",
+				opts = { show = "only_on_error" },
+			},
 			cmake_compile_commands_options = {
 				action = "copy",
 			},
-			-- :CMakeDebug builds the selected launch target, asks for one if none
-			-- is set, and hands nvim-dap the program, cwd, args and env itself.
-			-- This table is merged over that with "force", so it deliberately
-			-- carries no `name`: cmake-tools names the session after the target.
-			-- Adapters are defined in dap.lua.
 			cmake_dap_configuration = {
 				type = "codelldb",
 				request = "launch",
@@ -73,7 +107,7 @@ return {
 		},
 		keys = {
 			{ "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake: Generate" },
-			{ "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake: Build" },
+			{ "<leader>cb", build, desc = "CMake: Build" },
 			{ "<leader>cc", "<cmd>CMakeClean<cr>", desc = "CMake: Clean" },
 			{ "<leader>ct", "<cmd>CMakeSelectConfigurePreset<cr>", desc = "CMake: Select configure preset." },
 			{ "<leader>cs", "<cmd>CMakeSelectBuildPreset<cr>", desc = "CMake: Select build preset." },
