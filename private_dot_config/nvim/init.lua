@@ -40,6 +40,11 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- searching for hello matches hello, Hello, and HELLO.
+vim.opt.ignorecase = true
+-- searching for Hello matches only Hello
+vim.opt.smartcase = true
+
 -- show line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
