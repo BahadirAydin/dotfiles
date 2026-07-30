@@ -34,6 +34,9 @@ return {
 				lsp_doc_border = true, -- add a border to hover docs and signature help
 			},
 			lsp = {
+				signature = {
+					enabled = false,
+				},
 				override = {
 					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
