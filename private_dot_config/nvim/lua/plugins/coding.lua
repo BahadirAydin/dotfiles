@@ -19,18 +19,28 @@ return {
 		end,
 	},
 	{
-		"aznhe21/actions-preview.nvim",
-		opts = {},
+		"rachartier/tiny-code-action.nvim",
+		dependencies = {
+			{
+				"folke/snacks.nvim",
+				opts = {
+					terminal = {},
+				},
+			},
+		},
+		event = "LspAttach",
+		opts = {
+			backend = "delta",
+			picker = "snacks",
+		},
 		keys = {
-			-- Deliberately shadows the built-in `gra` rather than adding a third
-			-- key. Visual mode matters: clangd's extract function / extract
-			-- variable only appear for a selected range.
 			{
 				"gra",
 				function()
-					require("actions-preview").code_actions()
+					require("tiny-code-action").code_action()
 				end,
 				mode = { "n", "x" },
+				silent = true,
 				desc = "Code action (preview)",
 			},
 		},
