@@ -16,9 +16,13 @@ return {
 			"nvim-neotest/nvim-nio",
 			"nvim-lua/plenary.nvim",
 			"orjangj/neotest-ctest",
+			"nvim-neotest/neotest-python",
 		},
 		opts = function()
 			return {
+				consumers = {
+					overseer = require("neotest.consumers.overseer"),
+				},
 				adapters = {
 					require("neotest-ctest").setup({
 						-- foo_test.cpp and test_foo.cpp only. The upstream default
@@ -31,6 +35,9 @@ return {
 							return name:match("_test$") ~= nil or name:match("^test_") ~= nil
 						end,
 					}),
+					require("neotest-python")({
+						runner = "pytest",
+					}),
 				},
 			}
 		end,
@@ -42,14 +49,14 @@ return {
 			{
 				key("f"),
 				function()
-					require("neotest").run.run(vim.fn.expand("%"))
+					require("neotest").overseer.run(vim.fn.expand("%"))
 				end,
 				desc = "Test: run file",
 			},
 			{
 				key("a"),
 				function()
-					require("neotest").run.run(vim.uv.cwd())
+					require("neotest").overseer.run(vim.uv.cwd())
 				end,
 				desc = "Test: run all",
 			},
@@ -57,7 +64,7 @@ return {
 			{
 				key("q"),
 				function()
-					require("neotest").run.stop()
+					require("neotest").overseer.stop()
 				end,
 				desc = "Test: stop",
 			},
@@ -92,4 +99,5 @@ return {
 		},
 	},
 	{ "orjangj/neotest-ctest", lazy = true },
+	{ "nvim-neotest/neotest-python", lazy = true },
 }
