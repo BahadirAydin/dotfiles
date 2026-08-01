@@ -9,6 +9,7 @@ return {
 				{ "<leader>f", group = "Find" },
 				{ "<leader>h", group = "Git hunks" },
 				{ "<leader>ht", group = "Hunk toggles" },
+				{ "<leader>r", group = "Runner (Overseer)" },
 				{ "<leader>t", group = "Test" },
 				{ "<leader>u", group = "Debug" },
 				{ "<leader>x", group = "Trouble" },

@@ -46,9 +46,10 @@ return {
 						},
 					}, -- for example "os.date('%H:%M'))" can be added to show the current time
 					lualine_x = {
+						"overseer",
 						{
 							"lsp_status",
-							ignore_lsp = { "null-ls", "GitHub Copilot" },
+							ignore_lsp = {},
 						},
 						"encoding",
 						"fileformat",
