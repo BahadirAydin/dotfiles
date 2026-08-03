@@ -4,16 +4,10 @@
 --   <Up>    continue        <Down>   step over
 --   <Right> step into       <Left>   step out
 --
-local prefix = "<leader>u"
-
 local is_win = vim.fn.has("win32") == 1
 local mason = vim.fn.stdpath("data") .. "/mason/packages"
 local codelldb = mason .. "/codelldb/extension/adapter/codelldb" .. (is_win and ".exe" or "")
 local debugpy = mason .. "/debugpy/venv/" .. (is_win and "Scripts/python.exe" or "bin/python")
-
-local function key(suffix)
-	return prefix .. suffix
-end
 
 -- Install the debug adapters through mason the first time nvim-dap is loaded.
 local function ensure_installed(packages)
@@ -237,99 +231,99 @@ return {
 		end,
 		keys = {
 			{
-				key("u"),
+				"<leader>uu",
 				function()
 					require("dap").continue()
 				end,
 				desc = "Debug: start / continue",
 			},
 			{
-				key("b"),
+				"<leader>ub",
 				function()
 					require("dap").toggle_breakpoint()
 				end,
 				desc = "Debug: toggle breakpoint",
 			},
 			{
-				key("B"),
+				"<leader>uB",
 				function()
 					require("dap").set_breakpoint(vim.fn.input({ prompt = "Breakpoint condition: " }))
 				end,
 				desc = "Debug: conditional breakpoint",
 			},
 			{
-				key("g"),
+				"<leader>ug",
 				function()
 					require("dap").set_breakpoint(nil, nil, vim.fn.input({ prompt = "Log message: " }))
 				end,
 				desc = "Debug: log point",
 			},
 			{
-				key("x"),
+				"<leader>ux",
 				function()
 					require("dap").clear_breakpoints()
 				end,
 				desc = "Debug: clear all breakpoints",
 			},
 			{
-				key("c"),
+				"<leader>uc",
 				function()
 					require("dap").run_to_cursor()
 				end,
 				desc = "Debug: run to cursor",
 			},
 			{
-				key("p"),
+				"<leader>up",
 				function()
 					require("dap").pause()
 				end,
 				desc = "Debug: pause",
 			},
 			{
-				key("r"),
+				"<leader>ur",
 				function()
 					require("dap").restart()
 				end,
 				desc = "Debug: restart",
 			},
 			{
-				key("l"),
+				"<leader>ul",
 				function()
 					require("dap").run_last()
 				end,
 				desc = "Debug: run last configuration",
 			},
 			{
-				key("q"),
+				"<leader>uq",
 				function()
 					require("dap").terminate()
 				end,
 				desc = "Debug: terminate session",
 			},
 			{
-				key("v"),
+				"<leader>uv",
 				function()
 					require("dap-view").toggle()
 				end,
 				desc = "Debug: toggle UI",
 			},
 			{
-				key("e"),
+				"<leader>ue",
 				function()
 					require("dap-view").hover()
 				end,
 				desc = "Debug: evaluate under cursor",
 			},
-			{ key("w"), "<cmd>DapViewWatch<cr>", mode = { "n", "v" }, desc = "Debug: watch expression" },
+			{ "<leader>uw", "<cmd>DapViewWatch<cr>", mode = { "n", "v" }, desc = "Debug: watch expression" },
 			{
-				key("t"),
+				"<leader>ut",
 				function()
 					require("dap-view").jump_to_view("threads")
 				end,
 				desc = "Debug: threads / call stack",
 			},
 			{
-				key("R"),
+				"<leader>uR",
 				function()
 					require("dap-view").jump_to_view("repl")
 				end,

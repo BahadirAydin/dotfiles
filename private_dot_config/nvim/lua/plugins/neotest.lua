@@ -1,8 +1,3 @@
-local prefix = "<leader>t"
-local function key(suffix)
-	return prefix .. suffix
-end
-
 local function run(opts)
 	return function()
 		require("neotest").run.run(opts)
@@ -45,52 +40,52 @@ return {
 			require("neotest").setup(opts)
 		end,
 		keys = {
-			{ key("t"), run(), desc = "Test: run nearest" },
+			{ "<leader>tt", run(), desc = "Test: run nearest" },
 			{
-				key("f"),
+				"<leader>tf",
 				function()
 					require("neotest").overseer.run(vim.fn.expand("%"))
 				end,
 				desc = "Test: run file",
 			},
 			{
-				key("a"),
+				"<leader>ta",
 				function()
 					require("neotest").overseer.run(vim.uv.cwd())
 				end,
 				desc = "Test: run all",
 			},
-			{ key("l"), run({ suite = false, last = true }), desc = "Test: run last" },
+			{ "<leader>tl", run({ suite = false, last = true }), desc = "Test: run last" },
 			{
-				key("q"),
+				"<leader>tq",
 				function()
 					require("neotest").overseer.stop()
 				end,
 				desc = "Test: stop",
 			},
 			{
-				key("s"),
+				"<leader>ts",
 				function()
 					require("neotest").summary.toggle()
 				end,
 				desc = "Test: toggle summary",
 			},
 			{
-				key("o"),
+				"<leader>to",
 				function()
 					require("neotest").output.open({ enter = true, auto_close = true })
 				end,
 				desc = "Test: show output",
 			},
 			{
-				key("O"),
+				"<leader>tO",
 				function()
 					require("neotest").output_panel.toggle()
 				end,
 				desc = "Test: toggle output panel",
 			},
 			{
-				key("w"),
+				"<leader>tw",
 				function()
 					require("neotest").watch.toggle(vim.fn.expand("%"))
 				end,
