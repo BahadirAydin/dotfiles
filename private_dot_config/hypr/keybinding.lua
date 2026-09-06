@@ -1,12 +1,15 @@
---## BINDS ### 
+--## BINDS ###
 
 --# Applications ##
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd(terminal .. " " .. file_manager))
 -- bind = $mod SHIFT, N, exec, $terminal $file_manager_terminal
-hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" -t png"))
-hl.bind("ALT + Print", hl.dsp.exec_cmd("grim -o \"$(hyprctl monitors | awk '/Monitor/{mon=$2} /focused: yes/{print mon}')\" -t png"))
+hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" -t png'))
+hl.bind(
+	"ALT + Print",
+	hl.dsp.exec_cmd("grim -o \"$(hyprctl monitors | awk '/Monitor/{mon=$2} /focused: yes/{print mon}')\" -t png")
+)
 hl.bind(mod .. " + A", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill rofimoji ||  rofimoji"))
 hl.bind(mod .. " + L", hl.dsp.exec_cmd("pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"))
@@ -17,7 +20,7 @@ hl.bind(mod .. " + M", hl.dsp.exec_cmd("firefox --new-window music.youtube.com")
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/.config/dunst/volume.sh up"), { repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/.config/dunst/volume.sh down"), { repeating = true })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/dunst/volume.sh mute"), { repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-source-mute"), { repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"), { locked = true })
 hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("fish -c toggle-sink"))
 --# Brightness ##
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/dunst/brightness.sh up"), { repeating = true })
@@ -80,11 +83,10 @@ hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
 hl.bind(mod .. " + R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
+	hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+	hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+	hl.bind("up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+	hl.bind("down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 
-    hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
-    hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-    hl.bind("up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-    hl.bind("down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-
-    hl.bind("escape", hl.dsp.submap("reset"))
+	hl.bind("escape", hl.dsp.submap("reset"))
 end)
