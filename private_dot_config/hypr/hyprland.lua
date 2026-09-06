@@ -40,4 +40,10 @@ hl.config({
 	gestures = {
 		workspace_swipe_touch = true,
 	},
+	layout = {
+		-- Stop a lone window stretching the full 3440px on the ultrawide.
+		-- Releases as soon as a second window opens. Tolerance stays at
+		-- its default of 0.1.
+		single_window_aspect_ratio = { 16, 9 },
+	},
 })
