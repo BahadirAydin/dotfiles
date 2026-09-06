@@ -11,6 +11,7 @@
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
+    "privacy",
     "custom/weather",
     "backlight",
     "pulseaudio",
@@ -98,6 +99,14 @@
   "custom/power": {
     "format": " ",
     "on-click": " pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu",
+  },
+  "privacy": {
+    "icon-size": 18,
+    "icon-spacing": 6,
+    "modules": [
+      { "type": "screenshare", "tooltip": true },
+      { "type": "audio-in", "tooltip": true },
+    ],
   },
   "custom/weather": {
     "format": "{}",
