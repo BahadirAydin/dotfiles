@@ -23,7 +23,7 @@ hl.config({
 			inactive_border = "rgba(595959aa)",
 		},
 	},
-	-- https://wiki.hyprland.org/Configuring/Variables/#input
+	-- https://wiki.hypr.land/Configuring/Basics/Variables/#input
 	input = {
 		kb_layout = "tr",
 		kb_variant = "",
@@ -36,7 +36,7 @@ hl.config({
 			natural_scroll = false,
 		},
 	},
-	-- https://wiki.hyprland.org/Configuring/Variables/#gestures
+	-- https://wiki.hypr.land/Configuring/Basics/Variables/#gestures
 	gestures = {
 		workspace_swipe_touch = true,
 	},
