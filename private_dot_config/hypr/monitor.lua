@@ -39,5 +39,5 @@ end)
 
 hl.monitor({ output = "HDMI-A-1", disabled = true })
 
-hl.workspace_rule({ workspace = "1", monitor = EXTERNAL })
-hl.workspace_rule({ workspace = "10", monitor = LAPTOP })
+hl.workspace_rule({ workspace = "1", monitor = EXTERNAL, default = true })
+hl.workspace_rule({ workspace = "10", monitor = LAPTOP, default = true })
