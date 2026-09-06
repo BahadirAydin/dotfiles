@@ -1,14 +1,26 @@
 #!/bin/bash
+# Reports the current default sink for Waybar. Deliberately knows nothing about
+# specific devices: the icon is chosen from the sink's bus (usb = external
+# interface, anything else = built-in), so the Focusrite's node name only ever
+# has to be spelled out in toggle-sink.fish.
+#
+# Refreshed on a slow interval, and immediately on SIGRTMIN+8 which
+# toggle-sink.fish raises after switching.
 
-scarlett="alsa_output.usb-Focusrite_Scarlett_2i2_4th_Gen_S2Y2UV65632DD7-00.pro-output-0"
-current=$(pactl info | awk -F': ' '/Default Sink/ {print $2}')
+default=$(pactl info | awk -F': ' '/Default Sink/ {print $2}')
+desc=$(pactl -f json list sinks 2>/dev/null | python3 -c '
+import json, sys
+want = sys.argv[1]
+for s in json.load(sys.stdin):
+    if s["name"] == want:
+        print(s["description"])
+        break
+' "$default")
+[ -z "$desc" ] && desc="$default"
 
-if [ "$current" = "$scarlett" ]; then
-    icon=""
-    name="Scarlett 2i2"
-else
-    icon=""
-    name="Built-in Audio"
-fi
+case "$default" in
+    alsa_output.usb-*) icon="\uf025" ;;
+    *)                 icon="\uf028" ;;
+esac
 
-echo "{\"text\":\"$icon\",\"tooltip\":\"$name\"}"
+printf '{"text":"%b","tooltip":"%s"}\n' "$icon" "$desc"

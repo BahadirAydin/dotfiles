@@ -29,4 +29,7 @@ function toggle-sink
     end
 
     dunstify "Audio Toggle" "Switched to $target_name"
+
+    # Refresh the Waybar sink module immediately (custom/sink-toggle, signal 8).
+    pkill -RTMIN+8 waybar
 end

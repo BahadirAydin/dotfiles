@@ -121,7 +121,8 @@
   "custom/sink-toggle": {
     "format": "{} ",
     "tooltip": true,
-    "interval": 2,
+    "interval": 10,
+    "signal": 8,
     "exec": "$HOME/.config/waybar/modules/sink-toggle.sh",
     "on-click": "fish -c toggle-sink",
     "return-type": "json",
