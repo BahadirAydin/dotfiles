@@ -4,10 +4,10 @@
     "custom/launcher",
     "cpu",
     "memory",
-    "custom/idle",
+    "idle_inhibitor",
     "tray",
     "clock",
-    "custom/media",
+    "mpris",
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
@@ -79,12 +79,17 @@
     "format": " {}%",
     "max-length": 10,
   },
-  "custom/media": {
-    "format": "{icon}{}",
-    "return-type": "json",
-    "max-length": 40,
-    "exec": "$HOME/.config/waybar/modules/mediaplayer.py 2> /dev/null",
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": { "default": "\uf001", "firefox": "\uf269" },
+    "status-icons": { "paused": "\uf04c" },
+    "dynamic-order": ["title", "artist", "position", "length"],
+    "title-len": 30,
+    "artist-len": 20,
+    "max-length": 55,
     "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
   },
   "custom/launcher": {
     "format": " ",
@@ -110,14 +115,13 @@
     "on-click": "fish -c toggle-sink",
     "return-type": "json",
   },
-  "custom/idle": {
-    "format": "{} ",
+  "idle_inhibitor": {
+    "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": "",
+      "activated": "\uf0eb",
+      "deactivated": "\uf186",
     },
-    "exec": "pgrep hypridle > /dev/null && echo '' || echo ''",
-    "interval": 5,
-    "on-click": "~/.config/waybar/modules/idle.sh",
+    "tooltip-format-activated": "Idle inhibited \u2013 screen stays awake",
+    "tooltip-format-deactivated": "Idle timers active",
   },
 }
