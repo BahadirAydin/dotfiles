@@ -10,6 +10,7 @@ require("startup")
 require("window_rule")
 require("visual")
 require("gesture")
+require("permission")
 
 -- Below are default values
 
