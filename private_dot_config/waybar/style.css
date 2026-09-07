@@ -32,6 +32,7 @@ window#waybar.hidden {
 #privacy,
 #custom-weather,
 #backlight,
+#custom-sunset,
 #pulseaudio,
 #custom-sink-toggle,
 #idle_inhibitor,
@@ -117,6 +118,15 @@ window#waybar.hidden {
 }
 
 #privacy {
+  color: #e9b949;
+}
+
+/* Same glyph either way; only the colour says whether the filter is engaged. */
+#custom-sunset.off {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+#custom-sunset.on {
   color: #e9b949;
 }
 

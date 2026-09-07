@@ -18,6 +18,7 @@
     "network",
     "custom/weather",
     "backlight",
+    "custom/sunset",
     "pulseaudio",
     "custom/sink-toggle",
     "idle_inhibitor",
@@ -78,6 +79,15 @@
     "scroll-step": 5,
     "on-click": "brightnessctl set 100%",
     "on-click-right": "brightnessctl set 0"
+  },
+  "custom/sunset": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 60,
+    "signal": 9,
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/sunset.sh",
+    "on-click": "$HOME/.config/waybar/modules/sunset.sh toggle"
   },
   "pulseaudio": {
     "tooltip": false,

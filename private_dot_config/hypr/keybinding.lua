@@ -32,6 +32,11 @@ hl.bind(
 )
 hl.bind(mod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"), { description = "Lock the screen" })
 hl.bind(
+	mod .. " + T",
+	hl.dsp.exec_cmd("~/.config/waybar/modules/sunset.sh toggle"),
+	{ description = "Toggle the blue light filter" }
+)
+hl.bind(
 	mod .. " + M",
 	hl.dsp.exec_cmd("firefox --new-window music.youtube.com"),
 	{ description = "Open YouTube Music" }
