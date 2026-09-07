@@ -26,20 +26,22 @@
     # constant width of 300
     width = 500
 
-    # The maximum height of a single notification, excluding the frame.
-    height = 300
+    # The height of a single notification, excluding the frame. A single
+    # number means a fixed height; (min, max) grows as needed.
+    height = (0, 300)
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = (10, 50)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
-    # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    # Maximum number of notification (0 means no limit). Must be non-zero for
+    # indicate_hidden below to have anything to report.
+    notification_limit = 5
 
     ### Progress bar ###
 
@@ -65,10 +67,8 @@
     # notification_limit).
     indicate_hidden = yes
 
-    # The transparency of the window.  Range: [0; 100].
-    # This option will only work if a compositing window manager is
-    # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 15
+    # No `transparency` here: it is X11 only and silently ignored under
+    # Wayland. Use the alpha channel of the colours instead (#RRGGBBAA).
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -210,8 +210,9 @@
 
     ### Misc/Advanced ###
 
-    # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    # Used for `dunstctl context` and as the fallback when a notification has
+    # no action. dmenu is not installed here; rofi speaks the same protocol.
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/firefox -new-tab
