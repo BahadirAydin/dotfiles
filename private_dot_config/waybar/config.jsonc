@@ -148,7 +148,7 @@
   },
   "custom/power": {
     "format": "\uf011",
-    "on-click": "pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"
+    "on-click": "pkill -x rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"
   },
   "hyprland/submap": {
     "format": "{}",
