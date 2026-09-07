@@ -1,139 +1,143 @@
 {
   "layer": "top",
-  "spacing": 4,
+  "position": "top",
+  "height": 32,
+  "spacing": 0,
   "reload_style_on_change": true,
   "modules-left": [
-    "custom/launcher",
-    "cpu",
-    "memory",
-    "idle_inhibitor",
-    "tray",
-    "clock",
-    "mpris",
+    "hyprland/workspaces",
+    "mpris"
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "privacy",
     "custom/weather",
     "backlight",
     "pulseaudio",
     "custom/sink-toggle",
+    "idle_inhibitor",
     "battery",
-    "custom/power",
+    "tray",
+    "custom/power"
   ],
   "hyprland/workspaces": {
     "format": "{name}",
-    // "show-special": true,
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
-    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
-  },
-  "pulseaudio": {
-    "tooltip": false,
-    "scroll-step": 5,
-    "max-volume": 150,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂱 {volume}% ",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", ""],
-    },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "pavucontrol",
-  },
-  "network": {
-    "tooltip": false,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "",
-  },
-  "backlight": {
-    "tooltip": false,
-    "format": " {}%",
-    "interval": 1,
-    "scroll-step": 5,
-    "on-click": "brightnessctl set 100%",
-    "on-click-right": "brightnessctl set 0",
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20,
-    },
-    "format": "{icon}  {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""],
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10,
-  },
-  "clock": {
-    "format": "{:%H:%M %B %d %Y}",
-  },
-  "cpu": {
-    "interval": 15,
-    "format": " {}%",
-    "max-length": 10,
-  },
-  "memory": {
-    "interval": 30,
-    "format": " {}%",
-    "max-length": 10,
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
   },
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "player-icons": { "default": "\uf001", "firefox": "\uf269" },
-    "status-icons": { "paused": "\uf04c" },
-    "dynamic-order": ["title", "artist", "position", "length"],
-    "title-len": 30,
-    "artist-len": 20,
-    "max-length": 55,
+    "format": "{player_icon}\u2003{dynamic}",
+    "format-paused": "{status_icon}\u2003<i>{dynamic}</i>",
+    "player-icons": {
+      "default": "\uf001",
+      "firefox": "\uf269"
+    },
+    "status-icons": {
+      "paused": "\uf04c"
+    },
+    "title-len": 26,
+    "artist-len": 16,
+    "max-length": 42,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
+    "dynamic-order": [
+      "title",
+      "artist"
+    ]
   },
-  "custom/launcher": {
-    "format": " ",
-    "on-click": "pkill rofi || rofi -show drun -show-icons",
-  },
-  "custom/power": {
-    "format": " ",
-    "on-click": " pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu",
+  "clock": {
+    "format": "{:%a %d %b   %H:%M}",
+    "tooltip": false
   },
   "privacy": {
-    "icon-size": 18,
-    "icon-spacing": 6,
+    "icon-size": 14,
+    "icon-spacing": 8,
     "modules": [
-      { "type": "screenshare", "tooltip": true },
-      { "type": "audio-in", "tooltip": true },
-    ],
+      {
+        "type": "screenshare",
+        "tooltip": true
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true
+      }
+    ]
   },
   "custom/weather": {
     "format": "{}",
     "tooltip": true,
     "interval": 600,
-    "exec": "$HOME/.config/waybar/modules/weather.py",
-    "on-click": "firefox https://wttr.in/Ankara",
     "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/weather.py",
+    "on-click": "firefox https://wttr.in/Ankara"
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": "\uf185\u2003{}%",
+    "scroll-step": 5,
+    "on-click": "brightnessctl set 100%",
+    "on-click-right": "brightnessctl set 0"
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon}\u2003{volume}%",
+    "format-muted": "\uf028",
+    "format-icons": {
+      "default": [
+        "\uf028",
+        "\uf027",
+        "\uf027"
+      ]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-middle": "pavucontrol"
   },
   "custom/sink-toggle": {
-    "format": "{} ",
+    "format": "{}",
     "tooltip": true,
     "interval": 10,
     "signal": 8,
-    "exec": "$HOME/.config/waybar/modules/sink-toggle.sh",
-    "on-click": "fish -c toggle-sink",
     "return-type": "json",
+    "exec": "$HOME/.config/waybar/modules/sink-toggle.sh",
+    "on-click": "fish -c toggle-sink"
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": "\uf0eb",
-      "deactivated": "\uf186",
+      "deactivated": "\uf186"
     },
-    "tooltip-format-activated": "Idle inhibited \u2013 screen stays awake",
-    "tooltip-format-deactivated": "Idle timers active",
+    "tooltip-format-activated": "Idle inhibited",
+    "tooltip-format-deactivated": "Idle timers active"
   },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}\u2003{capacity}%",
+    "format-charging": "\uf0e7\u2003{capacity}%",
+    "format-plugged": "\uf0e7\u2003{capacity}%",
+    "format-alt": "{time}",
+    "format-icons": [
+      "\uf240",
+      "\uf240",
+      "\uf240",
+      "\uf240",
+      "\uf240"
+    ],
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 12
+  },
+  "custom/power": {
+    "format": "\uf011",
+    "on-click": "pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"
+  }
 }

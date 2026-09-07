@@ -1,184 +1,111 @@
+/* Glass - edge-to-edge translucent menu bar.
+   Text is Adwaita Sans (Inter-derived); glyphs fall through to the Nerd font.
+   Monochrome throughout, with gold reserved for the active workspace and for
+   states that actually need attention. */
+
 * {
   border: none;
-  border-radius: 10px;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 15px;
-  min-height: 10px;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "Adwaita Sans", "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  font-weight: 500;
 }
 
 window#waybar {
-  background: transparent;
+  background: rgba(10, 10, 12, 0.62);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 window#waybar.hidden {
   opacity: 0.2;
 }
 
-/* Shared pill geometry. Horizontal gaps come from the bar's "spacing": 4,
-   so individual modules no longer carry their own margin-left. */
-#backlight,
-#battery,
-#clock,
-#cpu,
-#custom-launcher,
-#custom-power,
-#custom-sink-toggle,
-#custom-updates,
-#custom-wallpaper,
-#custom-weather,
-#idle_inhibitor,
-#memory,
+/* One flat surface: modules carry spacing, never their own background. */
+#workspaces,
 #mpris,
-#network,
+#clock,
 #privacy,
+#custom-weather,
+#backlight,
 #pulseaudio,
-#tray {
-  margin-top: 6px;
-  margin-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  color: #161320;
+#custom-sink-toggle,
+#idle_inhibitor,
+#battery,
+#tray,
+#custom-power {
+  background: transparent;
+  padding: 0 12px;
+  margin: 0;
 }
 
 #workspaces {
-  background: rgba(255, 255, 255, 0.1);
-  color: black;
-  font-weight: bold;
+  padding: 0 4px;
+  margin-left: 10px;
+}
+
+#workspaces button {
   padding: 0 10px;
-  margin: 4px 6px;
-}
-#workspaces button:not(.active) {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-#workspaces button.active {
-  color: #b5e8e0;
-  font-weight: bold;
-  background: #061320;
-  padding: 2px 5px;
-}
-
-#window {
-  margin-top: 6px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  color: transparent;
+  color: rgba(255, 255, 255, 0.30);
   background: transparent;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
 }
 
-#network {
-  background: #bd93f9;
+#workspaces button.empty {
+  color: rgba(255, 255, 255, 0.18);
 }
 
-#pulseaudio {
-  background: #fae3b0;
+#workspaces button.visible {
+  color: rgba(255, 255, 255, 0.55);
 }
 
-#battery {
-  background: #b5e8e0;
+#workspaces button.urgent {
+  color: #e9b949;
+}
+
+/* last, so it wins over .visible on the focused workspace */
+#workspaces button.active {
+  color: #ffffff;
+  border-bottom: 2px solid #e9b949;
+}
+
+#clock {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+}
+
+#mpris {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 13px;
+  font-style: italic;
+}
+
+#tray {
+  padding: 0 10px;
+}
+
+#custom-power {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+#privacy {
+  color: #e9b949;
+}
+
+#battery.warning {
+  color: #e9b949;
+}
+
+#battery.critical {
+  color: #ff453a;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #161320;
-  background-color: #b5e8e0;
-}
-
-#battery.warning:not(.charging) {
-  background-color: #f8bd96;
-  color: #161320;
-}
-
-#battery.critical:not(.charging) {
-  background-color: #b5e8e0;
-  color: #161320;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes blink {
-  to {
-    background-color: #bf616a;
-    color: #b5e8e0;
-  }
-}
-
-#backlight {
-  background: #f8bd96;
-}
-
-#clock {
-  font-weight: bold;
-  background: #abe9b3;
-}
-
-#memory {
-  background: #ddb6f2;
-}
-
-#cpu {
-  background: #96cdfb;
-}
-
-#tray {
-  color: #b5e8e0;
-  background: #161320;
-}
-
-#idle_inhibitor {
-  background: #ef9c66;
-}
-
-#idle_inhibitor.activated {
-  background: #f9e2af;
-}
-
-#custom-launcher {
-  font-size: 24px;
-  padding-right: 5px;
-  color: #89dceb;
-  background: #161320;
-}
-
-#custom-weather {
-  font-size: 20px;
-  padding-right: 5px;
-  color: #89dceb;
-  background: #161320;
-}
-
-#custom-power {
-  font-size: 20px;
-  margin-right: 8px;
-  padding-right: 5px;
-  background: #f28fad;
-}
-
-#custom-sink-toggle {
-  font-size: 20px;
-  padding-right: 5px;
-  background: #c9cbff;
-}
-
-#privacy {
-  background: #f28fad;
-}
-
-#custom-wallpaper {
-  background: #c9cbff;
-}
-
-#custom-updates {
-  background: #e8a2af;
-}
-
-#mpris {
-  background: #f2cdcd;
+  color: rgba(255, 255, 255, 0.78);
 }
