@@ -23,11 +23,15 @@ hl.bind(
 	{ description = "Screenshot the focused monitor" }
 )
 
-hl.bind(mod .. " + A", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"), { description = "App launcher" })
-hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill rofimoji ||  rofimoji"), { description = "Emoji picker" })
+hl.bind(
+	mod .. " + A",
+	hl.dsp.exec_cmd("pkill -x rofi || rofi -show drun -show-icons"),
+	{ description = "App launcher" }
+)
+hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill -x rofi || rofimoji"), { description = "Emoji picker" })
 hl.bind(
 	mod .. " + L",
-	hl.dsp.exec_cmd("pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"),
+	hl.dsp.exec_cmd("pkill -x rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"),
 	{ description = "Power menu" }
 )
 hl.bind(mod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"), { description = "Lock the screen" })
