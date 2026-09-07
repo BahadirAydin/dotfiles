@@ -24,6 +24,9 @@ window#waybar.hidden {
 
 /* One flat surface: modules carry spacing, never their own background. */
 #workspaces,
+#submap,
+#window,
+#network,
 #mpris,
 #clock,
 #privacy,
@@ -69,6 +72,25 @@ window#waybar.hidden {
 #workspaces button.active {
   color: #ffffff;
   border-bottom: 2px solid #e9b949;
+}
+
+/* Focused app, macOS-style: the one piece of the bar that names what you are in. */
+#window {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* Only ever visible inside a submap, so it is allowed to shout a little. */
+#submap {
+  color: #e9b949;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  padding: 0 10px;
+}
+
+#network.disconnected,
+#network.linked {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 #clock {

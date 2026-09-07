@@ -6,13 +6,16 @@
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces",
-    "mpris"
+    "hyprland/submap",
+    "hyprland/window"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
+    "mpris",
     "privacy",
+    "network",
     "custom/weather",
     "backlight",
     "pulseaudio",
@@ -139,5 +142,34 @@
   "custom/power": {
     "format": "\uf011",
     "on-click": "pkill rofi || rofi -show power-menu -modi power-menu:rofi-power-menu"
+  },
+  "hyprland/submap": {
+    "format": "{}",
+    "tooltip": false,
+    "max-length": 16
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "separate-outputs": true,
+    "max-length": 55,
+    "rewrite": {
+      "(.*) \u2014 Mozilla Firefox": "$1",
+      "(.*) - Mozilla Firefox": "$1",
+      "^Mozilla Firefox$": "Firefox",
+      "(.*) - NVIM": "$1",
+      "^$": ""
+    }
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": "\uf1eb\u2003{essid}",
+    "format-ethernet": "\uf0e8\u2003wired",
+    "format-disconnected": "\uf127",
+    "format-linked": "\uf127",
+    "tooltip-format-wifi": "{essid}  {signalStrength}%  \u2022  {ipaddr}",
+    "tooltip-format-ethernet": "{ifname}  \u2022  {ipaddr}",
+    "tooltip-format-disconnected": "offline",
+    "max-length": 22,
+    "on-click": "nm-connection-editor"
   }
 }
