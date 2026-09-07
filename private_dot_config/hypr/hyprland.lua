@@ -16,12 +16,12 @@ require("permission")
 
 hl.config({
 	general = {
-		border_size = 4,
+		border_size = 1,
 		gaps_in = 5,
-		gaps_out = 10,
+		gaps_out = 12,
 		col = {
-			active_border = "rgba(D991FDFF)",
-			inactive_border = "rgba(595959aa)",
+			active_border = "rgba(E9B949cc)",
+			inactive_border = "rgba(FFFFFF12)",
 		},
 	},
 	-- https://wiki.hypr.land/Configuring/Basics/Variables/#input
