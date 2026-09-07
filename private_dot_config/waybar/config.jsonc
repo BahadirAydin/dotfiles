@@ -31,8 +31,8 @@
     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
   },
   "mpris": {
-    "format": "{player_icon}\u2003{dynamic}",
-    "format-paused": "{status_icon}\u2003<i>{dynamic}</i>",
+    "format": "<span foreground='#e9b949'>{player_icon}</span>\u2003<span foreground='#e8e8ea'>{title}</span><span foreground='#76777d'>\u2003{artist}</span>",
+    "format-paused": "<span foreground='#8a6f2c'>{status_icon}</span>\u2003<span foreground='#9a9aa0'><i>{title}</i></span><span foreground='#5e5f65'><i>\u2003{artist}</i></span>",
     "player-icons": {
       "default": "\uf001",
       "firefox": "\uf269"
@@ -44,11 +44,7 @@
     "artist-len": 16,
     "max-length": 42,
     "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "dynamic-order": [
-      "title",
-      "artist"
-    ]
+    "on-click-right": "playerctl next"
   },
   "clock": {
     "format": "{:%a %d %b   %H:%M}",

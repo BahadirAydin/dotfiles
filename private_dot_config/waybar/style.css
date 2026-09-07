@@ -100,10 +100,11 @@ window#waybar.hidden {
   letter-spacing: 1.1px;
 }
 
+/* Colour and italics come from the Pango markup in the format string, so the
+   title and artist can be weighted differently and playing/paused can differ. */
 #mpris {
   color: rgba(255, 255, 255, 0.50);
   font-size: 13px;
-  font-style: italic;
 }
 
 #tray {
