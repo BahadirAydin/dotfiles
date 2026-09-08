@@ -3,6 +3,9 @@ installed_packages_sway.txt
 assets/
 etc/
 README.md
+NOTES.md
 private_dot_config/lazygit/state.yml
 ~/.config/lazygit/state.yml
 package_lists/
+.config/waybar/tapo.json
+.config/fish/fish_variables
