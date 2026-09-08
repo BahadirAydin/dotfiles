@@ -41,7 +41,7 @@ window {
 }
 
 mainbox {
-    children:   [ inputbar, listview, mode-switcher ];
+    children:   [ inputbar, listview ];
 }
 
 /*****----- Inputbar -----*****/
@@ -110,23 +110,6 @@ element selected urgent {
 
 element-icon { size: 20px; cursor: inherit; }
 element-text { text-color: inherit; cursor: inherit; }
-
-/*****----- Mode switcher -----*****/
-
-mode-switcher {
-    border:         1px 0 0 0;
-    border-color:   @hairline;
-}
-
-button {
-    padding:    8px;
-    text-color: @fg-dim;
-    cursor:     pointer;
-}
-
-button selected {
-    text-color: @accent;
-}
 
 /*****----- Message -----*****/
 
