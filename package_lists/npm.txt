@@ -1,4 +1,4 @@
-@electron/asar@4.0.1
-corepack@0.34.2
-npm@11.6.2
-pnpm@10.29.3
+asar
+corepack
+npm
+pnpm
