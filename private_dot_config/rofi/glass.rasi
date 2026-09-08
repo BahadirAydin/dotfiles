@@ -1,0 +1,150 @@
+/**
+ * Glass -- translucent launcher matching waybar and the hypr window borders.
+ *
+ * Monochrome throughout, with gold reserved for the selected row, the same
+ * way the bar reserves it for the active workspace. Selection is a raised
+ * surface with a gold edge rather than a filled block, so a long list does
+ * not turn into a stripe of colour.
+ *
+ * The background alpha needs the compositor to blur behind it: see the
+ * layer_rule for the `rofi` namespace in hypr/visual.lua.
+ **/
+
+* {
+    font:       "Adwaita Sans 11";
+
+    glass:      #0A0A0CC4;
+    hairline:   #FFFFFF12;
+    raised:     #FFFFFF0D;
+    fg:         #FFFFFFC7;
+    fg-strong:  #FFFFFFFF;
+    fg-dim:     #FFFFFF4D;
+    accent:     #E9B949;
+    urgent:     #FF453A;
+
+    background-color:   transparent;
+    text-color:         @fg;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @glass;
+    border:             1px;
+    border-color:       @hairline;
+    border-radius:      10px;
+    width:              620px;
+    location:           center;
+    padding:            6px;
+}
+
+mainbox {
+    children:   [ inputbar, listview, mode-switcher ];
+}
+
+/*****----- Inputbar -----*****/
+
+inputbar {
+    padding:        14px 16px;
+    spacing:        12px;
+    children:       [ icon-search, entry ];
+    border:         0 0 1px 0;
+    border-color:   @hairline;
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size:       16px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder:        "Search";
+    placeholder-color:  @fg-dim;
+    text-color:         @fg-strong;
+    cursor:             text;
+}
+
+/*****----- Listview -----*****/
+
+listview {
+    lines:          9;
+    columns:        1;
+    cycle:          true;
+    dynamic:        true;
+    fixed-height:   false;
+    scrollbar:      false;
+    padding:        6px 0;
+}
+
+element {
+    padding:        8px 16px;
+    spacing:        12px;
+    border:         0 0 0 2px;
+    border-color:   transparent;
+    cursor:         pointer;
+}
+
+element normal normal    { text-color: @fg; }
+element normal active    { text-color: @accent; }
+element normal urgent    { text-color: @urgent; }
+
+element selected normal,
+element selected active {
+    background-color:   @raised;
+    border-color:       @accent;
+    text-color:         @fg-strong;
+}
+
+element selected urgent {
+    background-color:   @raised;
+    border-color:       @urgent;
+    text-color:         @urgent;
+}
+
+element-icon { size: 20px; cursor: inherit; }
+element-text { text-color: inherit; cursor: inherit; }
+
+/*****----- Mode switcher -----*****/
+
+mode-switcher {
+    border:         1px 0 0 0;
+    border-color:   @hairline;
+}
+
+button {
+    padding:    8px;
+    text-color: @fg-dim;
+    cursor:     pointer;
+}
+
+button selected {
+    text-color: @accent;
+}
+
+/*****----- Message -----*****/
+
+message {
+    border:         0 0 1px 0;
+    border-color:   @hairline;
+}
+
+textbox {
+    padding:            10px 16px;
+    text-color:         @fg;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}
+
+error-message {
+    padding:            16px;
+    border-radius:      10px;
+    background-color:   @glass;
+    text-color:         @urgent;
+}

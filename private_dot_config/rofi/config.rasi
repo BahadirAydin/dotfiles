@@ -1,7 +1,9 @@
 configuration {
     modes: [ combi ];
     combi-modes: [ window, drun, run ];
-    icon-theme: "Papirus";
+    icon-theme: "Papirus-Dark";
+    drun-display-format: "{name}";
+    window-format: "{c}  ·  {t}";
 }
 
-@theme "spotlight-dark"
+@theme "glass"
