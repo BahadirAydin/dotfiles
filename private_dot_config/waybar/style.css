@@ -33,6 +33,7 @@ window#waybar.hidden {
 #custom-weather,
 #backlight,
 #custom-sunset,
+#custom-tapo,
 #pulseaudio,
 #custom-sink-toggle,
 #idle_inhibitor,
@@ -127,6 +128,17 @@ window#waybar.hidden {
 }
 
 #custom-sunset.on {
+  color: #e9b949;
+}
+
+#custom-tapo.off,
+#custom-tapo.offline,
+#custom-tapo.busy {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+#custom-tapo.error,
+#custom-tapo.effect {
   color: #e9b949;
 }
 
