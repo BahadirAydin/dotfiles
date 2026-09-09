@@ -1,7 +1,7 @@
 /* Glass - edge-to-edge translucent menu bar.
    Text is Adwaita Sans (Inter-derived); glyphs fall through to the Nerd font.
-   Monochrome throughout, with hot pink reserved for the active workspace and for
-   states that actually need attention. */
+   Monochrome throughout, with the accent reserved for the active workspace and
+   for states that actually need attention. */
 
 * {
   border: none;
@@ -141,9 +141,9 @@ window#waybar.hidden {
   color: rgba(255, 255, 255, 0.50);
 }
 
-/* Something is capturing right now: the one thing on the bar that should
-   alarm rather than inform, so it never borrows the accent. Screen capture is
-   the loudest; the mic follows Apple's orange convention. */
+/* Something is capturing right now: the one thing on the bar that should alarm
+   rather than inform, so it never borrows the accent. Screen capture is the
+   louder of the two. */
 #privacy {
   color: #ff9f0a;
 }
@@ -161,9 +161,8 @@ window#waybar.hidden {
   color: rgba(255, 255, 255, 0.22);
 }
 
-/* The colour of the light the filter actually makes: 3400K on the Planckian
-   locus, which is what sunset.sh sets. Warm on purpose -- the accent would say
-   "cool", the exact opposite of what the filter does. */
+/* The colour of the light the filter actually makes, so the icon shows its own
+   effect. Deliberately not the accent, which carries no such meaning. */
 #custom-sunset.on {
   color: #ffbe87;
 }
@@ -179,8 +178,8 @@ window#waybar.hidden {
   color: #ff4fa3;
 }
 
-/* Caution, one step below critical's red -- both from the same family so the
-   two states read as a progression rather than two unrelated colours. */
+/* Caution, one step below critical -- both from the same family so the two
+   states read as a progression rather than two unrelated colours. */
 #battery.warning {
   color: #ff9f0a;
 }

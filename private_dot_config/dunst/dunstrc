@@ -95,7 +95,7 @@
     frame_width = 1
     frame_color = "#FFFFFF12"
 
-    # Hot pink, matching the active workspace. Overridden per urgency below.
+    # The accent, matching the active workspace. Overridden per urgency below.
     highlight = "#FF4FA3"
 
     # Space between notifications. Non-zero makes each one its own card and

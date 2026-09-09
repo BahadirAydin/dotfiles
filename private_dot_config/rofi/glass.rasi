@@ -1,9 +1,9 @@
 /**
  * Glass -- translucent launcher matching waybar and the hypr window borders.
  *
- * Monochrome throughout, with hot pink reserved for the selected row, the same
- * way the bar reserves it for the active workspace. Selection is a raised
- * surface with a hot pink edge rather than a filled block, so a long list does
+ * Monochrome throughout, with the accent reserved for the selected row, the
+ * same way the bar reserves it for the active workspace. Selection is a raised
+ * surface with an accent edge rather than a filled block, so a long list does
  * not turn into a stripe of colour.
  *
  * The background alpha needs the compositor to blur behind it: see the
