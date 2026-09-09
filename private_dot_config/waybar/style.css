@@ -141,8 +141,19 @@ window#waybar.hidden {
   color: rgba(255, 255, 255, 0.50);
 }
 
+/* Something is capturing right now: the one thing on the bar that should
+   alarm rather than inform, so it never borrows the accent. Screen capture is
+   the loudest; the mic follows Apple's orange convention. */
 #privacy {
-  color: #ff4fa3;
+  color: #ff9f0a;
+}
+
+#privacy-item.screenshare {
+  color: #ff453a;
+}
+
+#privacy-item.audio-in {
+  color: #ff9f0a;
 }
 
 /* Same glyph either way; only the colour says whether the filter is engaged. */
@@ -150,8 +161,11 @@ window#waybar.hidden {
   color: rgba(255, 255, 255, 0.22);
 }
 
+/* The colour of the light the filter actually makes: 3400K on the Planckian
+   locus, which is what sunset.sh sets. Warm on purpose -- the accent would say
+   "cool", the exact opposite of what the filter does. */
 #custom-sunset.on {
-  color: #ff4fa3;
+  color: #ffbe87;
 }
 
 #custom-tapo.off,
@@ -165,8 +179,10 @@ window#waybar.hidden {
   color: #ff4fa3;
 }
 
+/* Caution, one step below critical's red -- both from the same family so the
+   two states read as a progression rather than two unrelated colours. */
 #battery.warning {
-  color: #ff4fa3;
+  color: #ff9f0a;
 }
 
 #battery.critical {
