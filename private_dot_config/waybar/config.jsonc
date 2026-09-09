@@ -15,20 +15,42 @@
   "modules-right": [
     "mpris",
     "privacy",
-    "network",
-    "custom/weather",
-    "backlight",
-    "custom/sunset",
-    "custom/tapo",
-    "pulseaudio",
-    "custom/sink-toggle",
-    "idle_inhibitor",
-    "battery",
+    "group/net",
+    "group/controls",
+    "group/system",
     "tray",
     "custom/power"
   ],
+  "group/net": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "custom/weather"
+    ]
+  },
+  "group/controls": {
+    "orientation": "horizontal",
+    "modules": [
+      "backlight",
+      "custom/sunset",
+      "custom/tapo",
+      "pulseaudio",
+      "custom/sink-toggle"
+    ]
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "idle_inhibitor",
+      "battery"
+    ]
+  },
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{name}\u2003{windows}",
+    "workspace-taskbar": {
+      "enable": true,
+      "icon-size": 16
+    },
     "all-outputs": true,
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
