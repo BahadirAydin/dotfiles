@@ -1,9 +1,9 @@
 /**
  * Glass -- translucent launcher matching waybar and the hypr window borders.
  *
- * Monochrome throughout, with gold reserved for the selected row, the same
+ * Monochrome throughout, with hot pink reserved for the selected row, the same
  * way the bar reserves it for the active workspace. Selection is a raised
- * surface with a gold edge rather than a filled block, so a long list does
+ * surface with a hot pink edge rather than a filled block, so a long list does
  * not turn into a stripe of colour.
  *
  * The background alpha needs the compositor to blur behind it: see the
@@ -19,7 +19,7 @@
     fg:         #FFFFFFC7;
     fg-strong:  #FFFFFFFF;
     fg-dim:     #FFFFFF4D;
-    accent:     #E9B949;
+    accent:     #FF4FA3;
     urgent:     #FF453A;
 
     background-color:   transparent;

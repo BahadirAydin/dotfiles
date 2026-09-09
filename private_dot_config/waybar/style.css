@@ -1,6 +1,6 @@
 /* Glass - edge-to-edge translucent menu bar.
    Text is Adwaita Sans (Inter-derived); glyphs fall through to the Nerd font.
-   Monochrome throughout, with gold reserved for the active workspace and for
+   Monochrome throughout, with hot pink reserved for the active workspace and for
    states that actually need attention. */
 
 * {
@@ -90,13 +90,13 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-  color: #e9b949;
+  color: #ff4fa3;
 }
 
 /* last, so it wins over .visible on the focused workspace */
 #workspaces button.active {
   color: #ffffff;
-  border-bottom: 2px solid #e9b949;
+  border-bottom: 2px solid #ff4fa3;
 }
 
 /* Focused app, macOS-style: the one piece of the bar that names what you are in. */
@@ -107,7 +107,7 @@ window#waybar.hidden {
 
 /* Only ever visible inside a submap, so it is allowed to shout a little. */
 #submap {
-  color: #e9b949;
+  color: #ff4fa3;
   font-weight: 600;
   letter-spacing: 0.8px;
   padding: 0 10px;
@@ -142,7 +142,7 @@ window#waybar.hidden {
 }
 
 #privacy {
-  color: #e9b949;
+  color: #ff4fa3;
 }
 
 /* Same glyph either way; only the colour says whether the filter is engaged. */
@@ -151,7 +151,7 @@ window#waybar.hidden {
 }
 
 #custom-sunset.on {
-  color: #e9b949;
+  color: #ff4fa3;
 }
 
 #custom-tapo.off,
@@ -162,11 +162,11 @@ window#waybar.hidden {
 
 #custom-tapo.error,
 #custom-tapo.effect {
-  color: #e9b949;
+  color: #ff4fa3;
 }
 
 #battery.warning {
-  color: #e9b949;
+  color: #ff4fa3;
 }
 
 #battery.critical {

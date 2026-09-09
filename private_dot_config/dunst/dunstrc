@@ -95,8 +95,8 @@
     frame_width = 1
     frame_color = "#FFFFFF12"
 
-    # Gold, matching the active workspace. Overridden per urgency below.
-    highlight = "#E9B949"
+    # Hot pink, matching the active workspace. Overridden per urgency below.
+    highlight = "#FF4FA3"
 
     # Space between notifications. Non-zero makes each one its own card and
     # makes separator_height above irrelevant.
@@ -329,7 +329,7 @@
 [urgency_normal]
     background = "#0A0A0CD9"
     foreground = "#FFFFFFC7"
-    highlight  = "#E9B949"
+    highlight  = "#FF4FA3"
     timeout = 8
 
 [urgency_critical]
@@ -473,12 +473,12 @@
 
 [brightness control]
     stack_tag = "brightness"
-    highlight = "#E9B949"
+    highlight = "#FF4FA3"
     format    = "%n%%"
     alignment = right
 
 [volume control]
     stack_tag = "volume"
-    highlight = "#E9B949"
+    highlight = "#FF4FA3"
     format    = "%n%%"
     alignment = right

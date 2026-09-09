@@ -17,12 +17,12 @@ hl.config({
 	},
 	group = {
 		col = {
-			border_active = "rgba(E9B949cc)",
+			border_active = "rgba(FF4FA3cc)",
 			border_inactive = "rgba(FFFFFF12)",
 		},
 		groupbar = {
 			col = {
-				active = "rgba(E9B949cc)",
+				active = "rgba(FF4FA3cc)",
 			},
 			rounding = 10,
 		},
