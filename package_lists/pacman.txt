@@ -79,7 +79,6 @@ jellyfin-server
 jellyfin-web
 jq
 jre-openjdk
-jupyter-notebook
 just
 ladspa
 lazygit

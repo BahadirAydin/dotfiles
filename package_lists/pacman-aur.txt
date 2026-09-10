@@ -8,11 +8,10 @@ codex-desktop-linux
 downgrade
 ebgaramond-otf
 git-extras
-hyprlang2lua
 localsend-bin
 paru
 paru-debug
 raindrop
 rmlint-git
+rose-pine-hyprcursor
 ventoy-bin
-via
