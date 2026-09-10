@@ -14,6 +14,8 @@ hl.config({
 			size = 8,
 			passes = 3,
 		},
+		dim_inactive = true,
+		dim_strength = 0.1,
 	},
 	group = {
 		col = {
