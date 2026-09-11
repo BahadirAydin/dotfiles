@@ -22,10 +22,15 @@ On a new machine, pass your old controller config the first time:
 ```
 
 Credentials stay in `~/.config/waybar/tapo.json` and are not tracked by Git.
-If the light gets a new address, update it with:
+
+If the light gets a new address from DHCP, the module recovers on its own: a
+request that cannot reach the stored address re-probes the network and adopts
+the strip at its new address. To list what answers, or to set an address by
+hand:
 
 ```sh
-waybar-tapo --set-ip 192.168.1.10
+waybar-tapo --discover
+waybar-tapo --set-ip 192.168.1.3
 ```
 
 If a Tapo effect is active, stop it in the Tapo app before changing color or
