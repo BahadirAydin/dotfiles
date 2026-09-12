@@ -60,8 +60,6 @@ starship init fish | source
 # They are not repeated here -- an alias of the same name would shadow the
 # autoload at every startup for no gain.
 
-alias oc opencode
-
 function quiet
     nohup $argv &>/dev/null &
 end
