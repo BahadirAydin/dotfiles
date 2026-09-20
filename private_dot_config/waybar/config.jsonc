@@ -49,7 +49,7 @@
     "format": "{name}\u2003{windows}",
     "workspace-taskbar": {
       "enable": true,
-      "icon-size": 16
+      "icon-size": 17
     },
     "all-outputs": true,
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
@@ -76,7 +76,7 @@
     "tooltip": false
   },
   "privacy": {
-    "icon-size": 14,
+    "icon-size": 15,
     "icon-spacing": 8,
     "modules": [
       {
@@ -182,7 +182,7 @@
     "tooltip": false
   },
   "tray": {
-    "icon-size": 15,
+    "icon-size": 16,
     "spacing": 12
   },
   "custom/power": {
