@@ -1,5 +1,6 @@
 /**
- * Glass -- translucent launcher matching waybar and the hypr window borders.
+ * Catppuccin Mocha -- translucent launcher matching waybar and the hypr
+ * window borders.
  *
  * Monochrome throughout, with the accent reserved for the selected row, the
  * same way the bar reserves it for the active workspace. Selection is a raised
@@ -13,14 +14,14 @@
 * {
     font:       "Adwaita Sans 11";
 
-    glass:      #0A0A0CC4;
-    hairline:   #FFFFFF12;
-    raised:     #FFFFFF0D;
-    fg:         #FFFFFFC7;
-    fg-strong:  #FFFFFFFF;
-    fg-dim:     #FFFFFF4D;
-    accent:     #FF4FA3;
-    urgent:     #FF453A;
+    glass:      #1E1E2EC4;
+    hairline:   #CDD6F412;
+    raised:     #CDD6F40D;
+    fg:         #CDD6F4C7;
+    fg-strong:  #CDD6F4FF;
+    fg-dim:     #CDD6F44D;
+    accent:     #CBA6F7;
+    urgent:     #F38BA8;
 
     background-color:   transparent;
     text-color:         @fg;

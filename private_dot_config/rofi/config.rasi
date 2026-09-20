@@ -4,4 +4,4 @@ configuration {
     drun-display-format: "{name}";
 }
 
-@theme "glass"
+@theme "catppuccin-mocha"
