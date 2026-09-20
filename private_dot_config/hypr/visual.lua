@@ -19,12 +19,12 @@ hl.config({
 	},
 	group = {
 		col = {
-			border_active = "rgba(FF4FA3cc)",
-			border_inactive = "rgba(FFFFFF12)",
+			border_active = theme.accent,
+			border_inactive = theme.inactive,
 		},
 		groupbar = {
 			col = {
-				active = "rgba(FF4FA3cc)",
+				active = theme.accent,
 			},
 			rounding = 10,
 		},

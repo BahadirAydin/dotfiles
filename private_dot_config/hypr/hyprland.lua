@@ -3,6 +3,15 @@ terminal = "kitty"
 browser = "firefox"
 file_manager = "yazi"
 
+-- Window border colours. ~/.config/themes holds one small Lua table per
+-- theme, read straight from here -- change the name below to switch.
+-- The literals in the fallback are Catppuccin Mocha, so a missing or broken
+-- theme file leaves the borders looking right instead of taking the config down.
+local THEME = "catppuccin-mocha"
+package.path = os.getenv("HOME") .. "/.config/themes/?.lua;" .. package.path
+local ok, t = pcall(require, THEME)
+theme = ok and t or { accent = "rgba(CBA6F7cc)", inactive = "rgba(CDD6F412)" }
+
 require("env")
 require("keybinding")
 require("monitor")
@@ -20,8 +29,8 @@ hl.config({
 		gaps_in = 5,
 		gaps_out = 12,
 		col = {
-			active_border = "rgba(FF4FA3cc)",
-			inactive_border = "rgba(FFFFFF12)",
+			active_border = theme.accent,
+			inactive_border = theme.inactive,
 		},
 	},
 	-- https://wiki.hypr.land/Configuring/Basics/Variables/#input
