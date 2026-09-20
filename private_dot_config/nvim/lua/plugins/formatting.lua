@@ -2,6 +2,20 @@ return {
 	{
 		"stevearc/conform.nvim",
 		event = { "BufReadPre", "BufNewFile" },
+		init = function()
+			vim.api.nvim_create_user_command("FormatDisable", function(args)
+				if args.bang then
+					vim.g.disable_autoformat = true
+				else
+					vim.b.disable_autoformat = true
+				end
+			end, { desc = "Disable format-on-save (! = all buffers)", bang = true })
+
+			vim.api.nvim_create_user_command("FormatEnable", function()
+				vim.b.disable_autoformat = false
+				vim.g.disable_autoformat = false
+			end, { desc = "Re-enable format-on-save" })
+		end,
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -25,9 +39,16 @@ return {
 			formatters = {
 				sqlfluff = { append_args = { "--dialect", "postgres" } },
 			},
-			format_on_save = {
-				lsp_format = "fallback",
-			},
+			format_on_save = function(bufnr)
+				if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
+					return
+				end
+
+				return {
+					timeout_ms = 1000,
+					lsp_format = "fallback",
+				}
+			end,
 		},
 		keys = {
 			{
