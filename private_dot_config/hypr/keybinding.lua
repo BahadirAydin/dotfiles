@@ -2,6 +2,11 @@
 
 --# Applications ##
 hl.bind(mod .. " + Q", hl.dsp.exec_cmd(terminal), { description = "Open a terminal" })
+hl.bind(
+	mod .. " + F12",
+	hl.dsp.exec_cmd("kitten quick-access-terminal"),
+	{ description = "Toggle the quick access terminal" }
+)
 hl.bind(mod .. " + B", hl.dsp.exec_cmd(browser), { description = "Open the browser" })
 hl.bind(mod .. " + N", hl.dsp.exec_cmd(terminal .. " " .. file_manager), { description = "Open the file manager" })
 -- bind = $mod SHIFT, N, exec, $terminal $file_manager_terminal

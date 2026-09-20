@@ -50,3 +50,9 @@ hl.layer_rule({
 	blur = true,
 	ignore_alpha = 0.05,
 })
+
+hl.layer_rule({
+	match = { namespace = "kitty-quick-access" },
+	blur = true,
+	ignore_alpha = 0.05,
+})
