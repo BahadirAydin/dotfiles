@@ -1,4 +1,4 @@
-/* Glass - edge-to-edge translucent menu bar.
+/* Edge-to-edge translucent menu bar, in Catppuccin Mocha.
    Text is Adwaita Sans (Inter-derived); glyphs fall through to the Nerd font.
    Monochrome throughout, with the accent reserved for the active workspace and
    for states that actually need attention. */
@@ -13,8 +13,8 @@
 }
 
 window#waybar {
-  background: rgba(10, 10, 12, 0.88);
-  color: rgba(255, 255, 255, 0.78);
+  background: rgba(30, 30, 46, 0.88);
+  color: rgba(205, 214, 244, 0.78);
 }
 
 window#waybar.hidden {
@@ -54,7 +54,7 @@ window#waybar.hidden {
 #net,
 #controls,
 #system {
-  background: rgba(255, 255, 255, 0.055);
+  background: rgba(205, 214, 244, 0.06);
   border-radius: 8px;
   margin: 5px 3px;
 }
@@ -75,39 +75,39 @@ window#waybar.hidden {
 
 #workspaces button {
   padding: 0 10px;
-  color: rgba(255, 255, 255, 0.30);
+  color: rgba(205, 214, 244, 0.30);
   background: transparent;
   border-bottom: 2px solid transparent;
   font-size: 13px;
 }
 
 #workspaces button.empty {
-  color: rgba(255, 255, 255, 0.18);
+  color: rgba(205, 214, 244, 0.18);
 }
 
 #workspaces button.visible {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(205, 214, 244, 0.55);
 }
 
 #workspaces button.urgent {
-  color: #ff4fa3;
+  color: #cba6f7;
 }
 
 /* last, so it wins over .visible on the focused workspace */
 #workspaces button.active {
-  color: #ffffff;
-  border-bottom: 2px solid #ff4fa3;
+  color: #cdd6f4;
+  border-bottom: 2px solid #cba6f7;
 }
 
 /* Focused app, macOS-style: the one piece of the bar that names what you are in. */
 #window {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(205, 214, 244, 0.85);
   font-weight: 600;
 }
 
 /* Only ever visible inside a submap, so it is allowed to shout a little. */
 #submap {
-  color: #ff4fa3;
+  color: #cba6f7;
   font-weight: 600;
   letter-spacing: 0.8px;
   padding: 0 10px;
@@ -115,11 +115,11 @@ window#waybar.hidden {
 
 #network.disconnected,
 #network.linked {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(205, 214, 244, 0.35);
 }
 
 #clock {
-  color: #ffffff;
+  color: #cdd6f4;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 1.1px;
@@ -128,7 +128,7 @@ window#waybar.hidden {
 /* Colour and italics come from the Pango markup in the format string, so the
    title and artist can be weighted differently and playing/paused can differ. */
 #mpris {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(205, 214, 244, 0.50);
   font-size: 13px;
 }
 
@@ -138,57 +138,57 @@ window#waybar.hidden {
 
 #custom-power {
   margin-right: 10px;
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(205, 214, 244, 0.50);
 }
 
 /* Something is capturing right now: the one thing on the bar that should alarm
    rather than inform, so it never borrows the accent. Screen capture is the
    louder of the two. */
 #privacy {
-  color: #ff9f0a;
+  color: #fab387;
 }
 
 #privacy-item.screenshare {
-  color: #ff453a;
+  color: #f38ba8;
 }
 
 #privacy-item.audio-in {
-  color: #ff9f0a;
+  color: #fab387;
 }
 
 /* Same glyph either way; only the colour says whether the filter is engaged. */
 #custom-sunset.off {
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(205, 214, 244, 0.22);
 }
 
 /* The colour of the light the filter actually makes, so the icon shows its own
    effect. Deliberately not the accent, which carries no such meaning. */
 #custom-sunset.on {
-  color: #ffbe87;
+  color: #fab387;
 }
 
 #custom-tapo.off,
 #custom-tapo.offline,
 #custom-tapo.busy {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(205, 214, 244, 0.35);
 }
 
 #custom-tapo.error,
 #custom-tapo.effect {
-  color: #ff4fa3;
+  color: #cba6f7;
 }
 
 /* Caution, one step below critical -- both from the same family so the two
    states read as a progression rather than two unrelated colours. */
 #battery.warning {
-  color: #ff9f0a;
+  color: #fab387;
 }
 
 #battery.critical {
-  color: #ff453a;
+  color: #f38ba8;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(205, 214, 244, 0.78);
 }
