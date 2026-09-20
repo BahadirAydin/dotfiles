@@ -9,6 +9,7 @@ hl.bind(
 )
 hl.bind(mod .. " + B", hl.dsp.exec_cmd(browser), { description = "Open the browser" })
 hl.bind(mod .. " + N", hl.dsp.exec_cmd(terminal .. " " .. file_manager), { description = "Open the file manager" })
+hl.bind("XF86Explorer", hl.dsp.exec_cmd(terminal .. " " .. file_manager), { description = "Open the file manager" })
 -- bind = $mod SHIFT, N, exec, $terminal $file_manager_terminal
 
 -- Screenshots go to ~/Pictures and onto the clipboard.
@@ -33,6 +34,7 @@ hl.bind(
 	hl.dsp.exec_cmd("pkill -x rofi || rofi -show drun -show-icons"),
 	{ description = "App launcher" }
 )
+hl.bind("XF86Search", hl.dsp.exec_cmd("pkill -x rofi || rofi -show drun -show-icons"), { description = "App launcher" })
 hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("pkill -x rofi || rofimoji"), { description = "Emoji picker" })
 hl.bind(
 	mod .. " + L",
@@ -45,11 +47,8 @@ hl.bind(
 	hl.dsp.exec_cmd("~/.config/waybar/modules/sunset.sh toggle"),
 	{ description = "Toggle the blue light filter" }
 )
-hl.bind(
-	mod .. " + M",
-	hl.dsp.exec_cmd("firefox --new-window music.youtube.com"),
-	{ description = "Open YouTube Music" }
-)
+hl.bind(mod .. " + M", hl.dsp.exec_cmd("youtube-music"), { description = "Open YouTube Music" })
+hl.bind("XF86Mail", hl.dsp.exec_cmd("thunderbird"), { description = "Open the mail client" })
 
 --# Audio ##
 hl.bind(
@@ -72,6 +71,23 @@ hl.bind(
 	hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"),
 	{ locked = true, description = "Toggle microphone mute" }
 )
+hl.bind(
+	"XF86AudioPlay",
+	hl.dsp.exec_cmd("playerctl -p playerctld play-pause"),
+	{ locked = true, description = "Play/pause" }
+)
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl -p playerctld next"), { locked = true, description = "Next track" })
+hl.bind(
+	"XF86AudioPrev",
+	hl.dsp.exec_cmd("playerctl -p playerctld previous"),
+	{ locked = true, description = "Previous track" }
+)
+hl.bind(
+	"XF86AudioStop",
+	hl.dsp.exec_cmd("playerctl -p playerctld stop"),
+	{ locked = true, description = "Stop playback" }
+)
+
 hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("fish -c toggle-sink"), { description = "Switch audio output device" })
 
 --# Brightness ##
@@ -125,6 +141,8 @@ for i = 1, 10 do
 		{ description = "Move window to workspace " .. i }
 	)
 end
+
+hl.bind("XF86HomePage", hl.dsp.focus({ workspace = 1 }), { description = "Focus workspace 1" })
 
 hl.bind(
 	mod .. " + SHIFT + S",
