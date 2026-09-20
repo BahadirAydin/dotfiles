@@ -93,10 +93,10 @@
 
     # Same hairline the bar and the inactive window borders use.
     frame_width = 1
-    frame_color = "#FFFFFF12"
+    frame_color = "#CDD6F412"
 
     # The accent, matching the active workspace. Overridden per urgency below.
-    highlight = "#FF4FA3"
+    highlight = "#CBA6F7"
 
     # Space between notifications. Non-zero makes each one its own card and
     # makes separator_height above irrelevant.
@@ -321,22 +321,22 @@
 # blur behind it -- see the layer_rule for `notifications` in hypr/visual.lua.
 
 [urgency_low]
-    background = "#0A0A0CD9"
-    foreground = "#FFFFFF8A"
-    highlight  = "#FFFFFF4D"
+    background = "#1E1E2ED9"
+    foreground = "#CDD6F48A"
+    highlight  = "#CDD6F44D"
     timeout = 5
 
 [urgency_normal]
-    background = "#0A0A0CD9"
-    foreground = "#FFFFFFC7"
-    highlight  = "#FF4FA3"
+    background = "#1E1E2ED9"
+    foreground = "#CDD6F4C7"
+    highlight  = "#CBA6F7"
     timeout = 8
 
 [urgency_critical]
-    background  = "#0A0A0CE6"
-    foreground  = "#FFFFFFED"
-    frame_color = "#FF453A"
-    highlight   = "#FF453A"
+    background  = "#1E1E2EE6"
+    foreground  = "#CDD6F4ED"
+    frame_color = "#F38BA8"
+    highlight   = "#F38BA8"
     timeout = 0
     # Survives `dunstctl set-pause-level 60`, so a partial do-not-disturb
     # still lets critical through.
@@ -473,12 +473,12 @@
 
 [brightness control]
     stack_tag = "brightness"
-    highlight = "#FF4FA3"
+    highlight = "#CBA6F7"
     format    = "%n%%"
     alignment = right
 
 [volume control]
     stack_tag = "volume"
-    highlight = "#FF4FA3"
+    highlight = "#CBA6F7"
     format    = "%n%%"
     alignment = right
