@@ -35,6 +35,13 @@ hl.window_rule({
 
 hl.window_rule({
 	match = {
+		class = "^org\\.gnome\\.Calculator$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
 		class = ".*",
 	},
 	idle_inhibit = "fullscreen",
