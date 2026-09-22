@@ -42,6 +42,62 @@ hl.window_rule({
 
 hl.window_rule({
 	match = {
+		class = "^hyprland-share-picker$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^hyprpolkitagent$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^xdg-desktop-portal-gtk$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^nm-connection-editor$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^com\\.github\\.hluk\\.copyq$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^org\\.gnome\\.DiskUtility$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^org\\.gnome\\.Snapshot$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
+		class = "^org\\.localsend\\.localsend_app$",
+	},
+	float = true,
+})
+
+hl.window_rule({
+	match = {
 		class = ".*",
 	},
 	idle_inhibit = "fullscreen",
