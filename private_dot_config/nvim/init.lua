@@ -30,6 +30,7 @@ vim.opt.scrolloff = 10
 
 -- avoid breaking up a word when breaking a line
 vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 -- set tab to 4 spaces
 vim.opt.tabstop = 4
