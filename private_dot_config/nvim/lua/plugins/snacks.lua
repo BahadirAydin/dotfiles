@@ -29,6 +29,7 @@ return {
 				enabled = true,
 				win = { backdrop = { transparent = false } },
 			},
+			image = { enabled = true },
 			-- Disables treesitter, LSP, indent, etc. on files larger than 1.5MB to prevent freezes
 			bigfile = { enabled = true },
 			-- Renders the file before plugins load when running `nvim file.txt` for faster perceived startup
