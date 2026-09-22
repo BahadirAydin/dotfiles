@@ -31,6 +31,24 @@ set -gx DIRENV_LOG_FORMAT ""
 set -gx CC clang
 set -gx CXX clang++
 
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -gx MANROFFOPT -c
+
+set -gx RIPGREP_CONFIG_PATH $XDG_CONFIG_HOME/ripgrep/config
+
+set -gx FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+--color=selected-bg:#45475a
+--color=border:#6c7086,label:#cdd6f4'
+
+set -gx LESSHISTFILE $XDG_STATE_HOME/less_history
+set -gx PYTHON_HISTORY $XDG_STATE_HOME/python_history
+set -gx NODE_REPL_HISTORY $XDG_STATE_HOME/node_repl_history
+set -gx SQLITE_HISTORY $XDG_STATE_HOME/sqlite_history
+set -gx PSQL_HISTORY $XDG_STATE_HOME/psql_history
+
 ###########
 #  PATH   #
 ###########
