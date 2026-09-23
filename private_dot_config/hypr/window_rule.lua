@@ -100,6 +100,13 @@ hl.window_rule({
 	match = {
 		class = ".*",
 	},
+	persistent_size = true,
+})
+
+hl.window_rule({
+	match = {
+		class = ".*",
+	},
 	idle_inhibit = "fullscreen",
 })
 
