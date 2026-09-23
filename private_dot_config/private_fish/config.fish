@@ -74,10 +74,6 @@ starship init fish | source
 # FUNCTIONS #
 #############
 
-# Note: ls/ll/l/v/vim/lgit/L/gst/ssh-kitty are autoloaded from functions/.
-# They are not repeated here -- an alias of the same name would shadow the
-# autoload at every startup for no gain.
-
 function quiet
     nohup $argv &>/dev/null &
 end
