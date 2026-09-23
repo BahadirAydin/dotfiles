@@ -78,18 +78,24 @@ function quiet
     nohup $argv &>/dev/null &
 end
 
-function pdf
-    set file (fd --no-ignore -e pdf -e djvu --type f | fzf)
+function _pick_and_open
+    set -l args
+    for ext in $argv
+        set -a args -e $ext
+    end
+    set -l file (fd --no-ignore $args --type f | fzf)
     if test -n "$file"
-        nohup zathura "$file" &>/dev/null &
+        xdg-open $file &>/dev/null &
+        disown
     end
 end
 
+function pdf
+    _pick_and_open pdf djvu
+end
+
 function epub
-    set file (fd --no-ignore -e epub --type f | fzf)
-    if test -n "$file"
-        nohup zathura "$file" &>/dev/null &
-    end
+    _pick_and_open epub
 end
 
 function notes
