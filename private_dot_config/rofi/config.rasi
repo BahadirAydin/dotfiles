@@ -1,7 +1,8 @@
 configuration {
     modes: [ drun ];
     icon-theme: "Papirus-Dark";
-    drun-display-format: "{name}";
+    drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    matching: "fuzzy";
 }
 
 @theme "catppuccin-mocha"
