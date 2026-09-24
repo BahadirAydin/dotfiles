@@ -2,9 +2,7 @@
 # VARIABLES #
 #############
 
-# All global, never universal. Universal variables live in fish_variables,
-# which is gitignored -- anything set there is real configuration that the
-# repo cannot see, cannot review and cannot restore on a new machine.
+# All global, never universal. Universal variables live in fish_variables
 
 set -g fish_greeting
 
@@ -21,7 +19,7 @@ set -gx GOPATH $XDG_DATA_HOME/go
 # The archlinux-java symlink rather than a pinned version, so a JDK bump
 # does not silently leave JAVA_HOME pointing at an uninstalled tree.
 set -gx JAVA_HOME /usr/lib/jvm/default
-set -gx ANDROID_SDK_ROOT $HOME/Android/Sdk
+set -gx PNPM_HOME $XDG_DATA_HOME/pnpm
 
 # Starship reports the venv itself; the built-in prefix would double it up.
 set -gx VIRTUAL_ENV_DISABLE_PROMPT true
@@ -42,6 +40,9 @@ set -gx FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --previ
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
 --color=selected-bg:#45475a
 --color=border:#6c7086,label:#cdd6f4'
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
 
 set -gx LESSHISTFILE $XDG_STATE_HOME/less_history
 set -gx PYTHON_HISTORY $XDG_STATE_HOME/python_history
@@ -53,22 +54,24 @@ set -gx PSQL_HISTORY $XDG_STATE_HOME/psql_history
 #  PATH   #
 ###########
 
-# -g -P edits $PATH directly in global scope. The default writes to a
-# universal fish_user_paths, which would be re-prepended at every single
-# shell start and would not survive into the repo.
-#
 # System directories are deliberately absent: they are already in $PATH,
 # and re-prepending them here only shuffles precedence.
-fish_add_path -gP $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $JAVA_HOME/bin
+fish_add_path -gP $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $JAVA_HOME/bin $PNPM_HOME
 
 ###########
 # STARTUP #
 ###########
 
-fish_ssh_agent
-fish_vi_key_bindings
+if status is-interactive
+    fish_config theme choose catppuccin-mocha
+    fish_ssh_agent
+    set -g fish_key_bindings fish_vi_key_bindings
 
-starship init fish | source
+    fzf --fish | source
+    starship init fish | source
+    zoxide init --cmd cd fish | source
+    direnv hook fish | source
+end
 
 #############
 # FUNCTIONS #
@@ -123,18 +126,3 @@ function daily
     nvim $target_file
 end
 
-#############
-#   HOOKS   #
-#############
-
-# rustup's env.fish is sourced by conf.d/rustup.fish, not here.
-
-zoxide init --cmd cd fish | source
-direnv hook fish | source
-
-# pnpm
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
