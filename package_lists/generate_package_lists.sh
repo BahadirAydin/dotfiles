@@ -17,9 +17,16 @@ if command -v cargo &> /dev/null; then
 fi
 
 # NPM
-if command -v npm &> /dev/null; then
+if command -v npm &>/dev/null; then
     echo "Generating npm.txt..."
-    npm ls -g --depth=0 --parseable | xargs -n 1 basename | grep -v "lib" > npm.txt
+
+    if command -v fnm &>/dev/null; then
+        eval "$(fnm env --shell bash)"
+    fi
+
+    npm ls --global --depth=0 --json |
+        jq -r '.dependencies | keys[]' |
+        grep -vxE 'npm|corepack' >npm.txt
 fi
 
 echo "Done."
