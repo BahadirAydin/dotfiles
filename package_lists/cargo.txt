@@ -1,13 +1,7 @@
-bottom
 cargo-binstall
-cargo-generate
 cargo-llvm-cov
-cargo-nextest
-cargo-release
 du-dust
-jless
 lsd
-sqlx-cli
 stylua
 tree-sitter-cli
 uv

@@ -1,4 +1,1 @@
-asar
-corepack
-npm
 pnpm
