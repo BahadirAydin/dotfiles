@@ -21,6 +21,10 @@ set -gx GOPATH $XDG_DATA_HOME/go
 set -gx JAVA_HOME /usr/lib/jvm/default
 set -gx PNPM_HOME $XDG_DATA_HOME/pnpm
 
+if not set -q SSH_AUTH_SOCK
+    set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
+end
+
 # Starship reports the venv itself; the built-in prefix would double it up.
 set -gx VIRTUAL_ENV_DISABLE_PROMPT true
 # Empty format silences direnv's per-variable export chatter.
@@ -64,7 +68,6 @@ fish_add_path -gP $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $JAVA_HOME/bin $
 
 if status is-interactive
     fish_config theme choose catppuccin-mocha
-    fish_ssh_agent
     set -g fish_key_bindings fish_vi_key_bindings
 
     fzf --fish | source
