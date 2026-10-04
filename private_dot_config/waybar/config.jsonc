@@ -42,6 +42,7 @@
     "orientation": "horizontal",
     "modules": [
       "idle_inhibitor",
+      "power-profiles-daemon",
       "battery"
     ]
   },
@@ -162,6 +163,16 @@
     },
     "tooltip-format-activated": "Idle inhibited",
     "tooltip-format-deactivated": "Idle timers active"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "format-icons": {
+      "default": "\uf24e",
+      "performance": "\uf135",
+      "balanced": "\uf24e",
+      "power-saver": "\uf06c"
+    }
   },
   "battery": {
     "states": {

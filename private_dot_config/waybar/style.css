@@ -31,6 +31,7 @@ window#waybar.hidden {
 #pulseaudio,
 #custom-sink-toggle,
 #idle_inhibitor,
+#power-profiles-daemon,
 #battery,
 #tray,
 #custom-power {
@@ -64,6 +65,7 @@ window#waybar.hidden {
 #pulseaudio,
 #custom-sink-toggle,
 #idle_inhibitor,
+#power-profiles-daemon,
 #battery {
   padding: 0 8px;
 }
@@ -186,4 +188,12 @@ window#waybar.hidden {
 #battery.charging,
 #battery.plugged {
   color: rgba(205, 214, 244, 0.78);
+}
+
+#power-profiles-daemon.performance {
+  color: #fab387;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #a6e3a1;
 }
