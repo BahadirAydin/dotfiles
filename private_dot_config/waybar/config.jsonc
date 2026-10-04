@@ -134,12 +134,12 @@
     "scroll-step": 5,
     "max-volume": 150,
     "format": "{icon}\u2003{volume}%",
-    "format-muted": "\uf028",
+    "format-muted": "\ueee8",
     "format-icons": {
       "default": [
-        "\uf028",
+        "\uf026",
         "\uf027",
-        "\uf027"
+        "\uf028"
       ]
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -173,10 +173,10 @@
     "format-plugged": "\uf0e7\u2003{capacity}%",
     "format-alt": "{time}",
     "format-icons": [
-      "\uf240",
-      "\uf240",
-      "\uf240",
-      "\uf240",
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
       "\uf240"
     ],
     "tooltip": false
