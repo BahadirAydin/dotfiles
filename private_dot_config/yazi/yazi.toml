@@ -1,6 +1,6 @@
 [opener]
 video = [
-    { run = 'celluloid %s', orphan = true, desc = 'Celluloid' }
+    { run = 'haruna %s', orphan = true, desc = 'Haruna' }
 ]
 open = [
     { run = 'xdg-open %s', orphan = true, desc = 'Open' }
