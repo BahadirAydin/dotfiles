@@ -1,5 +1,10 @@
+[user]
+    name = BahadirAydin
+    email = bahadiraydin1923@gmail.com
+
 [core]
     pager = delta
+    editor = nvim
 
 [interactive]
     diffFilter = delta --color-only
@@ -17,3 +22,18 @@
 	required = true
 [pull]
 	rebase = true
+[init]
+    defaultBranch = main
+[diff]
+    algorithm = histogram
+    colorMoved = default
+[branch]
+    sort = -committerdate
+[credential]
+    helper = libsecret
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
