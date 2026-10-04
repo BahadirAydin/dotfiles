@@ -14,4 +14,6 @@ if status is-interactive
     abbr -a video haruna
     abbr -a img loupe
     abbr -a calc gnome-calculator
+
+    abbr -a ju just
 end
