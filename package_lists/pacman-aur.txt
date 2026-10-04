@@ -1,7 +1,6 @@
 antigravity
 bibata-cursor-theme
 claude-desktop
-codex-desktop-linux
 downgrade
 ebgaramond-otf
 git-extras

@@ -1,4 +1,5 @@
 adobe-source-code-pro-fonts
+adw-gtk-theme
 alacritty
 alsa-scarlett-gui
 alsa-utils
@@ -99,8 +100,10 @@ obsidian
 openssh
 papirus-icon-theme
 pavucontrol
+perf
 pipewire-alsa
 pipewire-pulse
+power-profiles-daemon
 pre-commit
 procs
 python
