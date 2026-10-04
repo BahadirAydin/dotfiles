@@ -33,23 +33,6 @@ local M = {
 				filetypes = { "markdown", "mdx" },
 			},
 			rust_analyzer = {},
-			svelte = {},
-			gopls = {},
-			tailwindcss = {
-				filetypes = {
-					"html",
-					"mdx",
-					"css",
-					"postcss",
-					"sass",
-					"scss",
-					"javascript",
-					"typescript",
-					"svelte",
-				},
-			},
-			ts_ls = {},
-			texlab = {},
 		},
 	},
 	config = function(_, opts)
