@@ -3,5 +3,5 @@
 # designating the VT.
 vt = 1
 [default_session]
-command = "tuigreet --cmd Hyprland --asteriks --remember --time --greeting 'Show must go on.'"
+command = "tuigreet --cmd start-hyprland --asterisks --remember --time --greeting 'Show must go on.'"
 user = "greeter"
