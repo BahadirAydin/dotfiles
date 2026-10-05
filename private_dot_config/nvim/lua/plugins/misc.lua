@@ -135,7 +135,6 @@ return {
 			--              date_format = "%d-%m-%Y-%a",
 			-- 	time_format = "%M:%H",
 			-- },
-
 		},
 		config = function(_, opts)
 			-- vim.opt.conceallevel = 1
