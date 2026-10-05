@@ -39,6 +39,11 @@ local M = {
 		vim.diagnostic.config({
 			virtual_lines = false,
 			severity_sort = true,
+			jump = {
+				on_jump = function(_, bufnr)
+					vim.diagnostic.open_float({ bufnr = bufnr, scope = "cursor", focus = false })
+				end,
+			},
 		})
 
 		vim.keymap.set(
@@ -47,12 +52,6 @@ local M = {
 			"<cmd>lua vim.diagnostic.open_float(nil,{focus=false, border='single'})<CR>",
 			{ silent = true, desc = "Floating diagnostics window." }
 		)
-		vim.keymap.set("n", "[d", function()
-			vim.diagnostic.jump({ count = -1, float = true })
-		end, { desc = "Prev diagnostic" })
-		vim.keymap.set("n", "]d", function()
-			vim.diagnostic.jump({ count = 1, float = true })
-		end, { desc = "Next diagnostic" })
 		vim.keymap.set("n", "<space>q", function()
 			vim.diagnostic.setloclist({ open = false })
 			require("trouble").open({ mode = "loclist", focus = true })
@@ -61,7 +60,6 @@ local M = {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
-				vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 				local function map(lhs, rhs, desc)
 					vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
 				end

@@ -59,8 +59,6 @@ vim.opt.signcolumn = "yes"
 -- ============================================================
 -- Keymaps
 -- ============================================================
-vim.keymap.set("n", "<C-l>", "<cmd>noh<CR>", { silent = true, desc = "Clear search highlight." })
-
 -- Turkish-Q puts ğ/ü on the physical keys that carry [/] on a US layout, and
 -- the real brackets need AltGr, which makes every ]q, ]d and ]c motion a chord.
 -- Alias the letters back in the modes where they are commands rather than text,
