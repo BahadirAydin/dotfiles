@@ -26,7 +26,6 @@ return {
 				objcpp = { "clang_format" },
 				go = { "gofmt" },
 				cmake = { "gersemi" },
-				sql = { "sqlfluff" },
 				javascript = { "prettierd" },
 				typescript = { "prettierd" },
 				svelte = { "prettierd" },
@@ -35,9 +34,6 @@ return {
 				scss = { "prettierd" },
 				postcss = { "prettierd" },
 				mdx = { "prettierd" },
-			},
-			formatters = {
-				sqlfluff = { append_args = { "--dialect", "postgres" } },
 			},
 			format_on_save = function(bufnr)
 				if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
