@@ -214,6 +214,7 @@ return {
 			})
 
 			setup_adapters()
+			require("overseer").enable_dap()
 
 			-- Picks up an activated virtualenv on its own, falls back to
 			-- mason's debugpy.

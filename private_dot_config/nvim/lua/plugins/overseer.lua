@@ -2,6 +2,7 @@ return {
 	{
 		"stevearc/overseer.nvim",
 		opts = {
+			dap = false,
 			component_aliases = {
 				default = {
 					"on_exit_set_status",
