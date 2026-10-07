@@ -40,6 +40,14 @@ export CXX=clang++
 export GOPATH="$XDG_DATA_HOME/go"
 export JAVA_HOME=/usr/lib/jvm/default
 
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
+
+export LESSHISTFILE="$XDG_STATE_HOME/less_history"
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
+export SQLITE_HISTORY="$XDG_STATE_HOME/sqlite_history"
+export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+
 case ":$PATH:" in
     *":$GOPATH/bin:"*) ;;
     *) PATH="$GOPATH/bin:$PATH" ;;
