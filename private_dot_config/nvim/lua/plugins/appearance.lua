@@ -7,10 +7,19 @@ return {
 				render = "background",
 				virtual_symbol = "■",
 				enable_tailwind = true,
-				enabled = function(bufnr)
-					local excluded = { c = true, cpp = true, cmake = true }
-					return not excluded[vim.bo[bufnr].filetype]
-				end,
+				exclude_filetypes = {
+					"c",
+					"cpp",
+					"objc",
+					"objcpp",
+					"cuda",
+					"rust",
+					"go",
+					"zig",
+					"asm",
+					"make",
+					"cmake",
+				},
 			})
 		end,
 	},
