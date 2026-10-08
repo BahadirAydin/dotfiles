@@ -25,7 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-. "$HOME/.cargo/env"
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -40,6 +39,15 @@ export CXX=clang++
 export GOPATH="$XDG_DATA_HOME/go"
 export JAVA_HOME=/usr/lib/jvm/default
 
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
+
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 
 export LESSHISTFILE="$XDG_STATE_HOME/less_history"
@@ -47,7 +55,13 @@ export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
 export SQLITE_HISTORY="$XDG_STATE_HOME/sqlite_history"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+mkdir -p "$XDG_STATE_HOME/bash"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
 
+case ":$PATH:" in
+    *":$CARGO_HOME/bin:"*) ;;
+    *) PATH="$CARGO_HOME/bin:$PATH" ;;
+esac
 case ":$PATH:" in
     *":$GOPATH/bin:"*) ;;
     *) PATH="$GOPATH/bin:$PATH" ;;

@@ -20,6 +20,14 @@ set -gx GOPATH $XDG_DATA_HOME/go
 # does not silently leave JAVA_HOME pointing at an uninstalled tree.
 set -gx JAVA_HOME /usr/lib/jvm/default
 set -gx PNPM_HOME $XDG_DATA_HOME/pnpm
+set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
+set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
+set -gx NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
+set -gx WGETRC $XDG_CONFIG_HOME/wgetrc
+set -gx TEXMFHOME $XDG_DATA_HOME/texmf
+set -gx TEXMFVAR $XDG_CACHE_HOME/texlive/texmf-var
+set -gx TEXMFCONFIG $XDG_CONFIG_HOME/texlive/texmf-config
 
 if not set -q SSH_AUTH_SOCK
     set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
@@ -53,6 +61,7 @@ set -gx PYTHON_HISTORY $XDG_STATE_HOME/python_history
 set -gx NODE_REPL_HISTORY $XDG_STATE_HOME/node_repl_history
 set -gx SQLITE_HISTORY $XDG_STATE_HOME/sqlite_history
 set -gx PSQL_HISTORY $XDG_STATE_HOME/psql_history
+set -gx HISTFILE $XDG_STATE_HOME/bash/history
 
 ###########
 #  PATH   #
@@ -60,7 +69,7 @@ set -gx PSQL_HISTORY $XDG_STATE_HOME/psql_history
 
 # System directories are deliberately absent: they are already in $PATH,
 # and re-prepending them here only shuffles precedence.
-fish_add_path -gP $HOME/.local/bin $HOME/.cargo/bin $GOPATH/bin $JAVA_HOME/bin $PNPM_HOME
+fish_add_path -gP $HOME/.local/bin $CARGO_HOME/bin $GOPATH/bin $JAVA_HOME/bin $PNPM_HOME
 
 ###########
 # STARTUP #
